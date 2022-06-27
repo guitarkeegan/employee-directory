@@ -1,596 +1,596 @@
 INSERT INTO department (id, name)
 VALUES 
-( 1, 'Marketing' )
-( 2, 'Finance' )
-( 3, 'Operations Management' )
-( 4, 'Human Resources' )
-( 5, 'IT' )
+( 1, 'Marketing' ),
+( 2, 'Finance' ),
+( 3, 'Operations Management' ),
+( 4, 'Human Resources' ),
+( 5, 'IT' );
 
 INSERT INTO role (id, title, salary, department_id)
 VALUES
-( 1, 'Marketing Specialist', 61437, 1 )
-( 2, 'Marketing Manager', 83623, 1 )
-( 3, 'Marketing Director', 75121, 1 )
-( 4, 'Graphic Designer', 74917, 1 )
-( 5, 'Marketing Research Analyst', 49247, 1 )
-( 6, 'Marketing Communications Manager', 48903, 1 )
-( 7, 'Marketing Consultant', 55893, 1 )
-( 8, 'Product Manager', 79880, 1 )
-( 9, 'Public Relations', 55707, 1 )
-( 10, 'Social Media Assistant', 45600, 1 )
-( 11, 'Brand Manager', 69464, 1 )
-( 12, 'SEO Manager', 81477, 1 )
-( 13, 'Content Marketing Manager', 66677, 1 )
-( 14, 'Copywriter', 48852, 1 )
-( 15, 'Media Buyer', 73612, 1 )
-( 16, 'Digital Marketing Manager', 64124, 1 )
-( 17, 'eCommerce Marketing Specialist', 53796, 1 )
-( 18, 'Brand Strategist', 89757, 1 )
-( 19, 'Vice President of Marketing', 58142, 1 )
-( 20, 'Media Relations Coordinator', 79964, 1 )
-( 1, 'Marketing Specialist', 120495, 2 )
-( 2, 'Marketing Manager', 147895, 2 )
-( 3, 'Marketing Director', 126330, 2 )
-( 4, 'Graphic Designer', 151962, 2 )
-( 5, 'Marketing Research Analyst', 127104, 2 )
-( 6, 'Marketing Communications Manager', 95884, 2 )
-( 7, 'Marketing Consultant', 110393, 2 )
-( 8, 'Product Manager', 94810, 2 )
-( 9, 'Public Relations', 133940, 2 )
-( 10, 'Social Media Assistant', 144898, 2 )
-( 11, 'Brand Manager', 75213, 2 )
-( 12, 'SEO Manager', 57548, 2 )
-( 13, 'Content Marketing Manager', 48330, 2 )
-( 14, 'Copywriter', 100001, 2 )
-( 15, 'Media Buyer', 85340, 2 )
-( 16, 'Digital Marketing Manager', 164965, 2 )
-( 17, 'eCommerce Marketing Specialist', 89431, 2 )
-( 18, 'Brand Strategist', 105476, 2 )
-( 19, 'Vice President of Marketing', 86290, 2 )
-( 20, 'Media Relations Coordinator', 60758, 2 )
-( 1, 'Operations Manager', 89366, 3 )
-( 2, 'Operations Assistant', 160573, 3 )
-( 3, 'Operations Coordinator', 105158, 3 )
-( 4, 'Operations Analyst', 132892, 3 )
-( 5, 'Operations Director', 189566, 3 )
-( 6, 'Vice President of Operations', 69929, 3 )
-( 7, 'Operations Professional', 149564, 3 )
-( 8, 'Scrum Master', 65502, 3 )
-( 9, 'Continuous Improvement Lead', 139788, 3 )
-( 10, 'Continuous Improvement Consultant', 73766, 3 )
-( 1, 'Human Resources', 52565, 4 )
-( 2, 'Office Assistant', 70824, 4 )
-( 3, 'Secretary', 72266, 4 )
-( 4, 'Office Clerk', 82185, 4 )
-( 5, 'File Clerk', 68591, 4 )
-( 6, 'Account Collector', 82489, 4 )
-( 7, 'Administrative Specialist', 56204, 4 )
-( 8, 'Executive Assistant', 72917, 4 )
-( 9, 'Program Administrator', 83449, 4 )
-( 10, 'Program Manager', 84332, 4 )
-( 11, 'Administrative Analyst', 66258, 4 )
-( 12, 'Data Entry', 78793, 4 )
-( 1, 'Computer Scientist', 171230, 5 )
-( 2, 'IT Professional', 124762, 5 )
-( 3, 'UX Designer & UI Developer', 114110, 5 )
-( 4, 'SQL Developer', 158375, 5 )
-( 5, 'Web Designer', 121981, 5 )
-( 6, 'Web Developer', 78137, 5 )
-( 7, 'Help Desk Worker/Desktop Support', 54510, 5 )
-( 8, 'Software Engineer', 119310, 5 )
-( 9, 'Data Entry', 117109, 5 )
-( 10, 'DevOps Engineer', 188978, 5 )
-( 11, 'Computer Programmer', 139030, 5 )
-( 12, 'Network Administrator', 81389, 5 )
-( 13, 'Information Security Analyst', 74058, 5 )
-( 14, 'Artificial Intelligence Engineer', 110780, 5 )
-( 15, 'Cloud Architect', 92006, 5 )
-( 16, 'IT Manager', 50372, 5 )
-( 17, 'Technical Specialist', 50765, 5 )
-( 18, 'Application Developer', 135186, 5 )
-( 19, 'Chief Technology Officer (CTO)', 94499, 5 )
-( 20, 'Chief Information Officer (CIO)', 135891, 5 )
+( 1, 'Marketing Specialist', 89075, 1 ),
+( 2, 'Marketing Manager', 60416, 1 ),
+( 3, 'Marketing Director', 50790, 1 ),
+( 4, 'Graphic Designer', 67217, 1 ),
+( 5, 'Marketing Research Analyst', 61572, 1 ),
+( 6, 'Marketing Communications Manager', 89670, 1 ),
+( 7, 'Marketing Consultant', 47980, 1 ),
+( 8, 'Product Manager', 78788, 1 ),
+( 9, 'Public Relations', 82457, 1 ),
+( 10, 'Social Media Assistant', 48860, 1 ),
+( 11, 'Brand Manager', 64842, 1 ),
+( 12, 'SEO Manager', 59495, 1 ),
+( 13, 'Content Marketing Manager', 75006, 1 ),
+( 14, 'Copywriter', 62909, 1 ),
+( 15, 'Media Buyer', 55412, 1 ),
+( 16, 'Digital Marketing Manager', 63506, 1 ),
+( 17, 'eCommerce Marketing Specialist', 51302, 1 ),
+( 18, 'Brand Strategist', 46142, 1 ),
+( 19, 'Vice President of Marketing', 73260, 1 ),
+( 20, 'Media Relations Coordinator', 44514, 1 ),
+( 1, 'Marketing Specialist', 155082, 2 ),
+( 2, 'Marketing Manager', 158416, 2 ),
+( 3, 'Marketing Director', 141306, 2 ),
+( 4, 'Graphic Designer', 107891, 2 ),
+( 5, 'Marketing Research Analyst', 116537, 2 ),
+( 6, 'Marketing Communications Manager', 162918, 2 ),
+( 7, 'Marketing Consultant', 127239, 2 ),
+( 8, 'Product Manager', 132807, 2 ),
+( 9, 'Public Relations', 97883, 2 ),
+( 10, 'Social Media Assistant', 52485, 2 ),
+( 11, 'Brand Manager', 94063, 2 ),
+( 12, 'SEO Manager', 160071, 2 ),
+( 13, 'Content Marketing Manager', 79616, 2 ),
+( 14, 'Copywriter', 127490, 2 ),
+( 15, 'Media Buyer', 80425, 2 ),
+( 16, 'Digital Marketing Manager', 156761, 2 ),
+( 17, 'eCommerce Marketing Specialist', 106734, 2 ),
+( 18, 'Brand Strategist', 152941, 2 ),
+( 19, 'Vice President of Marketing', 83753, 2 ),
+( 20, 'Media Relations Coordinator', 53912, 2 ),
+( 1, 'Operations Manager', 169798, 3 ),
+( 2, 'Operations Assistant', 86903, 3 ),
+( 3, 'Operations Coordinator', 129287, 3 ),
+( 4, 'Operations Analyst', 184745, 3 ),
+( 5, 'Operations Director', 102159, 3 ),
+( 6, 'Vice President of Operations', 119938, 3 ),
+( 7, 'Operations Professional', 176488, 3 ),
+( 8, 'Scrum Master', 128866, 3 ),
+( 9, 'Continuous Improvement Lead', 67593, 3 ),
+( 10, 'Continuous Improvement Consultant', 72726, 3 ),
+( 1, 'Human Resources', 64210, 4 ),
+( 2, 'Office Assistant', 77506, 4 ),
+( 3, 'Secretary', 50466, 4 ),
+( 4, 'Office Clerk', 63916, 4 ),
+( 5, 'File Clerk', 72679, 4 ),
+( 6, 'Account Collector', 56414, 4 ),
+( 7, 'Administrative Specialist', 50759, 4 ),
+( 8, 'Executive Assistant', 89379, 4 ),
+( 9, 'Program Administrator', 70191, 4 ),
+( 10, 'Program Manager', 52335, 4 ),
+( 11, 'Administrative Analyst', 50658, 4 ),
+( 12, 'Data Entry', 90693, 4 ),
+( 1, 'Computer Scientist', 44878, 5 ),
+( 2, 'IT Professional', 113253, 5 ),
+( 3, 'UX Designer & UI Developer', 121133, 5 ),
+( 4, 'SQL Developer', 76082, 5 ),
+( 5, 'Web Designer', 180499, 5 ),
+( 6, 'Web Developer', 127967, 5 ),
+( 7, 'Help Desk Worker/Desktop Support', 136794, 5 ),
+( 8, 'Software Engineer', 90736, 5 ),
+( 9, 'Data Entry', 147579, 5 ),
+( 10, 'DevOps Engineer', 151910, 5 ),
+( 11, 'Computer Programmer', 139965, 5 ),
+( 12, 'Network Administrator', 180546, 5 ),
+( 13, 'Information Security Analyst', 103988, 5 ),
+( 14, 'Artificial Intelligence Engineer', 145920, 5 ),
+( 15, 'Cloud Architect', 181100, 5 ),
+( 16, 'IT Manager', 138174, 5 ),
+( 17, 'Technical Specialist', 47750, 5 ),
+( 18, 'Application Developer', 87517, 5 ),
+( 19, 'Chief Technology Officer (CTO)', 133117, 5 ),
+( 20, 'Chief Information Officer (CIO)', 174920, 5 );
 
 
-INSERT INTO employee (id, first_name, last_name, roll_id, manager_id)
+INSERT INTO employee (id, first_name, last_name, role_id, manager_id)
 VALUES
-( 1, 'Competent', 'Tesla', 5, 38)
-( 2, 'Zen', 'Taussig', 0, 6)
-( 3, 'Romantic', 'Leavitt', 8, 50)
-( 4, 'Ecstatic', 'Lichterman', 6, 10)
-( 5, 'Distracted', 'Satoshi', 9, 48)
-( 6, 'Pedantic', 'Murdock', 9, 15)
-( 7, 'Adoring', 'Mendeleev', 2, 43)
-( 8, 'Zen', 'Bardeen', 2, 4)
-( 9, 'Focused', 'Swanson', 7, 30)
-( 10, 'Zealous', 'Volhard', 1, 40)
-( 11, 'Sleepy', 'Albattani', 3, 29)
-( 12, 'Cool', 'Meitner', 4, 10)
-( 13, 'Awesome', 'Chatelet', 2, 23)
-( 14, 'Great', 'Ride', 0, 48)
-( 15, 'Blissful', 'Herschel', 8, 33)
-( 16, 'Serene', 'Greider', 1, 33)
-( 17, 'Thirsty', 'Kare', 1, 49)
-( 18, 'Focused', 'Stonebraker', 9, 19)
-( 19, 'Romantic', 'Golick', 7, 46)
-( 20, 'Fervent', 'Diffie', 10, 46)
-( 21, 'Blissful', 'Bose', 5, 22)
-( 22, 'Clever', 'Lederberg', 9, 19)
-( 23, 'Compassionate', 'Galois', 5, 18)
-( 24, 'Confident', 'Lederberg', 10, 22)
-( 25, 'Ecstatic', 'Davinci', 10, 10)
-( 26, 'Upbeat', 'Bassi', 2, 43)
-( 27, 'Adoring', 'Allen', 10, 32)
-( 28, 'Awesome', 'Nash', 5, 39)
-( 29, 'Infallible', 'Euclid', 3, 45)
-( 30, 'Inspiring', 'Ellis', 6, 6)
-( 31, 'Cool', 'Noyce', 2, 8)
-( 32, 'Blissful', 'Brahmagupta', 1, 41)
-( 33, 'Upbeat', 'Brahmagupta', 3, 3)
-( 34, 'Dreamy', 'Aryabhata', 3, 29)
-( 35, 'Pensive', 'Montalcini', 1, 26)
-( 36, 'Gracious', 'Ardinghelli', 2, 45)
-( 37, 'Inspiring', 'Sammet', 5, 13)
-( 38, 'Laughing', 'Wescoff', 8, 28)
-( 39, 'Vibrant', 'Ellis', 3, 12)
-( 40, 'Great', 'Ishizaka', 10, 45)
-( 41, 'Epic', 'Varahamihira', 2, 2)
-( 42, 'Charming', 'Benz', 0, 37)
-( 43, 'Elated', 'Wescoff', 5, 10)
-( 44, 'Competent', 'Chandrasekhar', 2, 26)
-( 45, 'Gifted', 'Newton', 3, 2)
-( 46, 'Flamboyant', 'Albattani', 9, 35)
-( 47, 'Priceless', 'Raman', 10, 44)
-( 48, 'Xenodochial', 'Archimedes', 2, 38)
-( 49, 'Relaxed', 'Benz', 4, 12)
-( 50, 'Quizzical', 'Wing', 13, 49)
-( 51, 'Confident', 'Bardeen', 8, 2)
-( 52, 'Serene', 'Visvesvaraya', 6, 49)
-( 53, 'Friendly', 'Wiles', 6, 25)
-( 54, 'Pensive', 'Fermi', 11, 12)
-( 55, 'Competent', 'Dewdney', 10, 31)
-( 56, 'Boring', 'Franklin', 14, 22)
-( 57, 'Mystifying', 'Mestorf', 0, 8)
-( 58, 'Tender', 'Spence', 10, 35)
-( 59, 'Festive', 'Heisenberg', 15, 38)
-( 60, 'Stoic', 'Thompson', 4, 3)
-( 61, 'Happy', 'Heisenberg', 18, 6)
-( 62, 'Inspiring', 'Shamir', 17, 25)
-( 63, 'Hopeful', 'Curran', 17, 28)
-( 64, 'Xenodochial', 'Mendel', 18, 3)
-( 65, 'Peaceful', 'Diffie', 10, 40)
-( 66, 'Agitated', 'Mendel', 10, 16)
-( 67, 'Dazzling', 'Tereshkova', 11, 9)
-( 68, 'Reverent', 'Lichterman', 12, 35)
-( 69, 'Brave', 'Goldberg', 6, 41)
-( 70, 'Interesting', 'Booth', 6, 32)
-( 71, 'Wizardly', 'Benz', 15, 2)
-( 72, 'Boring', 'Wescoff', 16, 14)
-( 73, 'Vigorous', 'Shockley', 10, 18)
-( 74, 'Friendly', 'Cohen', 7, 45)
-( 75, 'Loving', 'Goldstine', 6, 49)
-( 76, 'Hungry', 'Bhaskara', 12, 7)
-( 77, 'Busy', 'Shirley', 10, 12)
-( 78, 'Pensive', 'Swartz', 0, 38)
-( 79, 'Eloquent', 'Chatelet', 10, 22)
-( 80, 'Hardcore', 'Edison', 5, 47)
-( 81, 'Zealous', 'Gould', 10, 35)
-( 82, 'Condescending', 'Dhawan', 1, 2)
-( 83, 'Determined', 'Jang', 7, 10)
-( 84, 'Brave', 'Poincare', 19, 38)
-( 85, 'Adoring', 'Thompson', 15, 40)
-( 86, 'Admiring', 'Noether', 1, 19)
-( 87, 'Quirky', 'Goldwasser', 1, 27)
-( 88, 'Priceless', 'Lehmann', 0, 21)
-( 89, 'Nervous', 'Lalande', 1, 46)
-( 90, 'Flamboyant', 'Bohr', 2, 37)
-( 91, 'Frosty', 'Leavitt', 6, 11)
-( 92, 'Laughing', 'Archimedes', 20, 20)
-( 93, 'Suspicious', 'Villani', 1, 3)
-( 94, 'Reverent', 'Keldysh', 7, 19)
-( 95, 'Beautiful', 'Roentgen', 1, 25)
-( 96, 'Flamboyant', 'Bartik', 8, 8)
-( 97, 'Crazy', 'Cannon', 2, 13)
-( 98, 'Sweet', 'Proskuriakova', 6, 6)
-( 99, 'Vigorous', 'Poitras', 17, 26)
-( 100, 'Naughty', 'Brown', 20, 43)
-( 101, 'Pedantic', 'Yalow', 18, 9)
-( 102, 'Stoic', 'Wescoff', 3, 40)
-( 103, 'Nostalgic', 'Khorana', 4, 24)
-( 104, 'Practical', 'Allen', 0, 29)
-( 105, 'Quizzical', 'Ptolemy', 0, 37)
-( 106, 'Cool', 'Swartz', 0, 26)
-( 107, 'Fervent', 'Kapitsa', 5, 8)
-( 108, 'Confident', 'Carson', 18, 39)
-( 109, 'Stoic', 'Sammet', 17, 48)
-( 110, 'Priceless', 'Thompson', 11, 49)
-( 111, 'Silly', 'Yalow', 0, 28)
-( 112, 'Magical', 'Mclean', 6, 13)
-( 113, 'Nervous', 'Black', 14, 28)
-( 114, 'Admiring', 'Mirzakhani', 8, 31)
-( 115, 'Keen', 'Lamport', 0, 2)
-( 116, 'Stoic', 'Mcclintock', 2, 7)
-( 117, 'Hopeful', 'Blackwell', 5, 20)
-( 118, 'Inspiring', 'Johnson', 2, 48)
-( 119, 'Xenodochial', 'Taussig', 1, 9)
-( 120, 'Loving', 'Fermat', 2, 19)
-( 121, 'Priceless', 'Shtern', 8, 14)
-( 122, 'Condescending', 'Knuth', 12, 49)
-( 123, 'Focused', 'Torvalds', 7, 22)
-( 124, 'Relaxed', 'Moore', 15, 8)
-( 125, 'Hopeful', 'Robinson', 20, 16)
-( 126, 'Eager', 'Mahavira', 17, 30)
-( 127, 'Dazzling', 'Elgamal', 16, 38)
-( 128, 'Vigilant', 'Moore', 17, 33)
-( 129, 'Jolly', 'Meitner', 2, 31)
-( 130, 'Nifty', 'Mirzakhani', 19, 13)
-( 131, 'Condescending', 'Wilson', 11, 49)
-( 132, 'Keen', 'Raman', 0, 24)
-( 133, 'Zen', 'Khorana', 6, 17)
-( 134, 'Quizzical', 'Lalande', 11, 46)
-( 135, 'Friendly', 'Margulis', 19, 50)
-( 136, 'Angry', 'Nash', 2, 14)
-( 137, 'Compassionate', 'Banzai', 7, 21)
-( 138, 'Keen', 'Tharp', 5, 13)
-( 139, 'Blissful', 'Chaplygin', 9, 35)
-( 140, 'Flamboyant', 'Galileo', 12, 36)
-( 141, 'Lucid', 'Chaplygin', 13, 37)
-( 142, 'Dreamy', 'Wu', 17, 17)
-( 143, 'Affectionate', 'Solomon', 16, 26)
-( 144, 'Agitated', 'Yonath', 3, 3)
-( 145, 'Sleepy', 'Archimedes', 12, 41)
-( 146, 'Ecstatic', 'Noether', 16, 31)
-( 147, 'Competent', 'Heyrovsky', 7, 4)
-( 148, 'Recursing', 'Vaughan', 1, 14)
-( 149, 'Agitated', 'Diffie', 14, 5)
-( 150, 'Elegant', 'Chebyshev', 3, 26)
-( 151, 'Competent', 'Varahamihira', 8, 44)
-( 152, 'Musing', 'Jang', 2, 40)
-( 153, 'Elated', 'Cray', 7, 39)
-( 154, 'Brave', 'Gagarin', 7, 36)
-( 155, 'Confident', 'Meitner', 11, 49)
-( 156, 'Silly', 'Neumann', 20, 41)
-( 157, 'Unruffled', 'Zhukovsky', 4, 5)
-( 158, 'Thirsty', 'Pare', 11, 27)
-( 159, 'Elastic', 'Ptolemy', 8, 47)
-( 160, 'Boring', 'Rhodes', 8, 10)
-( 161, 'Vigilant', 'Spence', 6, 1)
-( 162, 'Intelligent', 'Roentgen', 3, 23)
-( 163, 'Clever', 'Shtern', 6, 16)
-( 164, 'Pedantic', 'Tesla', 16, 42)
-( 165, 'Elegant', 'Cori', 0, 40)
-( 166, 'Pedantic', 'Northcutt', 12, 4)
-( 167, 'Wizardly', 'Fermi', 14, 31)
-( 168, 'Sad', 'Ganguly', 9, 49)
-( 169, 'Reverent', 'Shtern', 6, 21)
-( 170, 'Focused', 'Poincare', 7, 1)
-( 171, 'Vigilant', 'Khayyam', 12, 40)
-( 172, 'Fervent', 'Tu', 17, 21)
-( 173, 'Agitated', 'Visvesvaraya', 7, 3)
-( 174, 'Pensive', 'Colden', 1, 8)
-( 175, 'Recursing', 'Williams', 1, 38)
-( 176, 'Vibrant', 'Wiles', 7, 20)
-( 177, 'Tender', 'Blackwell', 2, 40)
-( 178, 'Nice', 'Shannon', 10, 26)
-( 179, 'Optimistic', 'Ride', 10, 15)
-( 180, 'Elegant', 'Pascal', 1, 28)
-( 181, 'Modest', 'Buck', 5, 47)
-( 182, 'Epic', 'Bardeen', 12, 44)
-( 183, 'Sad', 'Ganguly', 1, 28)
-( 184, 'Infallible', 'Banach', 16, 44)
-( 185, 'Keen', 'Wiles', 12, 22)
-( 186, 'Amazing', 'Tesla', 17, 31)
-( 187, 'Charming', 'Northcutt', 11, 4)
-( 188, 'Pedantic', 'Thompson', 6, 50)
-( 189, 'Ecstatic', 'Booth', 10, 30)
-( 190, 'Distracted', 'Gould', 5, 30)
-( 191, 'Fervent', 'Pare', 1, 31)
-( 192, 'Nervous', 'Ride', 9, 19)
-( 193, 'Hardcore', 'Jang', 20, 17)
-( 194, 'Jolly', 'Rhodes', 1, 16)
-( 195, 'Nostalgic', 'Blackwell', 17, 19)
-( 196, 'Exciting', 'Lamarr', 12, 6)
-( 197, 'Upbeat', 'Poitras', 12, 38)
-( 198, 'Frosty', 'Feynman', 2, 47)
-( 199, 'Elastic', 'Banzai', 13, 41)
-( 200, 'Sleepy', 'Antonelli', 2, 5)
-( 201, 'Musing', 'Franklin', 7, 4)
-( 202, 'Brave', 'Galois', 2, 27)
-( 203, 'Fervent', 'Chandrasekhar', 3, 8)
-( 204, 'Stoic', 'Zhukovsky', 4, 33)
-( 205, 'Awesome', 'Gagarin', 8, 28)
-( 206, 'Hungry', 'Haslett', 7, 18)
-( 207, 'Eloquent', 'Hertz', 7, 43)
-( 208, 'Busy', 'Euclid', 11, 31)
-( 209, 'Relaxed', 'Wing', 19, 38)
-( 210, 'Zealous', 'Goodall', 18, 4)
-( 211, 'Focused', 'Mendel', 6, 18)
-( 212, 'Recursing', 'Poitras', 5, 20)
-( 213, 'Vibrant', 'Mestorf', 19, 45)
-( 214, 'Loving', 'Gagarin', 14, 25)
-( 215, 'Frosty', 'Bassi', 6, 23)
-( 216, 'Competent', 'Gauss', 2, 46)
-( 217, 'Hopeful', 'Carver', 2, 36)
-( 218, 'Nifty', 'Feistel', 4, 44)
-( 219, 'Funny', 'Lumiere', 6, 43)
-( 220, 'Optimistic', 'Goldwasser', 8, 24)
-( 221, 'Adoring', 'Wilson', 11, 36)
-( 222, 'Magical', 'Boyd', 20, 33)
-( 223, 'Competent', 'Cerf', 12, 23)
-( 224, 'Youthful', 'Shaw', 10, 16)
-( 225, 'Gifted', 'Easley', 10, 37)
-( 226, 'Laughing', 'Faraday', 11, 4)
-( 227, 'Brave', 'Margulis', 3, 6)
-( 228, 'Heuristic', 'Knuth', 6, 6)
-( 229, 'Intelligent', 'Bartik', 20, 39)
-( 230, 'Relaxed', 'Margulis', 20, 23)
-( 231, 'Loving', 'Carver', 11, 30)
-( 232, 'Eager', 'Haslett', 16, 5)
-( 233, 'Affectionate', 'Kepler', 15, 22)
-( 234, 'Gracious', 'Dijkstra', 17, 40)
-( 235, 'Recursing', 'Beaver', 1, 46)
-( 236, 'Nervous', 'Hawking', 15, 43)
-( 237, 'Vigilant', 'Visvesvaraya', 16, 16)
-( 238, 'Clever', 'Cray', 9, 49)
-( 239, 'Trusting', 'Roentgen', 17, 44)
-( 240, 'Xenodochial', 'Curran', 8, 31)
-( 241, 'Keen', 'Mendel', 7, 12)
-( 242, 'Unruffled', 'Shtern', 6, 18)
-( 243, 'Serene', 'Bhabha', 15, 18)
-( 244, 'Nice', 'Almeida', 9, 9)
-( 245, 'Lucid', 'Booth', 13, 42)
-( 246, 'Priceless', 'Williamson', 8, 49)
-( 247, 'Blissful', 'Maxwell', 19, 24)
-( 248, 'Charming', 'Visvesvaraya', 1, 49)
-( 249, 'Elated', 'Goldwasser', 2, 36)
-( 250, 'Affectionate', 'Ellis', 4, 27)
-( 251, 'Friendly', 'Bell', 11, 38)
-( 252, 'Distracted', 'Euler', 14, 19)
-( 253, 'Thirsty', 'Dubinsky', 8, 44)
-( 254, 'Determined', 'Dirac', 5, 28)
-( 255, 'Keen', 'Germain', 7, 5)
-( 256, 'Modest', 'Rhodes', 3, 5)
-( 257, 'Pensive', 'Taussig', 11, 22)
-( 258, 'Fervent', 'Engelbart', 7, 41)
-( 259, 'Frosty', 'Tereshkova', 3, 24)
-( 260, 'Suspicious', 'Robinson', 14, 3)
-( 261, 'Focused', 'Knuth', 4, 50)
-( 262, 'Vigorous', 'Spence', 8, 45)
-( 263, 'Objective', 'Williamson', 1, 22)
-( 264, 'Nice', 'Dewdney', 0, 7)
-( 265, 'Upbeat', 'Lalande', 11, 33)
-( 266, 'Pensive', 'Black', 13, 47)
-( 267, 'Romantic', 'Spence', 1, 46)
-( 268, 'Practical', 'Wilson', 16, 1)
-( 269, 'Objective', 'Ride', 6, 36)
-( 270, 'Cool', 'Cerf', 6, 43)
-( 271, 'Bold', 'Shamir', 8, 3)
-( 272, 'Amazing', 'Raman', 4, 16)
-( 273, 'Hungry', 'Booth', 8, 27)
-( 274, 'Priceless', 'Volhard', 16, 40)
-( 275, 'Compassionate', 'Euler', 6, 35)
-( 276, 'Peaceful', 'Carver', 18, 17)
-( 277, 'Funny', 'Einstein', 5, 3)
-( 278, 'Nervous', 'Lehmann', 5, 25)
-( 279, 'Thirsty', 'Shtern', 8, 26)
-( 280, 'Unruffled', 'Mayer', 2, 38)
-( 281, 'Inspiring', 'Nightingale', 1, 47)
-( 282, 'Upbeat', 'Elion', 8, 11)
-( 283, 'Vibrant', 'Babbage', 2, 25)
-( 284, 'Silly', 'Bohr', 4, 2)
-( 285, 'Hungry', 'Lovelace', 1, 26)
-( 286, 'Affectionate', 'Dirac', 11, 36)
-( 287, 'Hopeful', 'Jones', 20, 16)
-( 288, 'Blissful', 'Hugle', 20, 45)
-( 289, 'Stupefied', 'Benz', 3, 12)
-( 290, 'Sleepy', 'Shannon', 20, 33)
-( 291, 'Objective', 'Kalam', 10, 43)
-( 292, 'Affectionate', 'Wescoff', 8, 20)
-( 293, 'Sad', 'Kepler', 6, 19)
-( 294, 'Infallible', 'Leakey', 3, 12)
-( 295, 'Heuristic', 'Feistel', 8, 16)
-( 296, 'Peaceful', 'Lichterman', 14, 23)
-( 297, 'Zealous', 'Turing', 19, 47)
-( 298, 'Priceless', 'Euler', 9, 36)
-( 299, 'Exciting', 'Antonelli', 12, 27)
-( 300, 'Hungry', 'Babbage', 3, 28)
-( 301, 'Ecstatic', 'Lehmann', 0, 41)
-( 302, 'Epic', 'Nightingale', 15, 10)
-( 303, 'Relaxed', 'Pare', 3, 11)
-( 304, 'Priceless', 'Tesla', 15, 9)
-( 305, 'Happy', 'Brahmagupta', 0, 46)
-( 306, 'Elated', 'Austin', 6, 26)
-( 307, 'Confident', 'Kowalevski', 12, 24)
-( 308, 'Heuristic', 'Khayyam', 7, 29)
-( 309, 'Goofy', 'Shannon', 7, 22)
-( 310, 'Gifted', 'Tu', 6, 21)
-( 311, 'Eloquent', 'Gould', 20, 28)
-( 312, 'Bold', 'Mcclintock', 15, 24)
-( 313, 'Ecstatic', 'Nash', 4, 50)
-( 314, 'Angry', 'Rhodes', 16, 5)
-( 315, 'Xenodochial', 'Heyrovsky', 9, 45)
-( 316, 'Nifty', 'Franklin', 8, 44)
-( 317, 'Lucid', 'Benz', 6, 23)
-( 318, 'Competent', 'Jang', 10, 13)
-( 319, 'Agitated', 'Babbage', 10, 48)
-( 320, 'Recursing', 'Keller', 1, 38)
-( 321, 'Hopeful', 'Grothendieck', 8, 44)
-( 322, 'Upbeat', 'Volhard', 11, 3)
-( 323, 'Cranky', 'Curie', 18, 9)
-( 324, 'Intelligent', 'Banzai', 3, 4)
-( 325, 'Elated', 'Hofstadter', 9, 3)
-( 326, 'Intelligent', 'Snyder', 9, 20)
-( 327, 'Xenodochial', 'Chaum', 20, 16)
-( 328, 'Modest', 'Morse', 14, 19)
-( 329, 'Wizardly', 'Tu', 8, 20)
-( 330, 'Elegant', 'Archimedes', 7, 36)
-( 331, 'Romantic', 'Matsumoto', 4, 49)
-( 332, 'Optimistic', 'Swirles', 18, 28)
-( 333, 'Magical', 'Wiles', 4, 49)
-( 334, 'Confident', 'Beaver', 15, 47)
-( 335, 'Romantic', 'Haibt', 13, 42)
-( 336, 'Focused', 'Morse', 1, 28)
-( 337, 'Determined', 'Jepsen', 12, 23)
-( 338, 'Youthful', 'Payne', 6, 46)
-( 339, 'Romantic', 'Feistel', 12, 4)
-( 340, 'Clever', 'Almeida', 8, 33)
-( 341, 'Hardcore', 'Ganguly', 17, 15)
-( 342, 'Compassionate', 'Feynman', 1, 7)
-( 343, 'Epic', 'Banzai', 2, 25)
-( 344, 'Vigorous', 'Solomon', 9, 20)
-( 345, 'Unruffled', 'Franklin', 10, 18)
-( 346, 'Goofy', 'Keldysh', 19, 35)
-( 347, 'Priceless', 'Lehmann', 5, 16)
-( 348, 'Amazing', 'Lederberg', 4, 16)
-( 349, 'Serene', 'Bardeen', 10, 6)
-( 350, 'Clever', 'Robinson', 11, 12)
-( 351, 'Recursing', 'Matsumoto', 2, 10)
-( 352, 'Sad', 'Morse', 11, 12)
-( 353, 'Condescending', 'Davinci', 0, 20)
-( 354, 'Nifty', 'Jennings', 8, 27)
-( 355, 'Exciting', 'Visvesvaraya', 19, 22)
-( 356, 'Gracious', 'Burnell', 9, 43)
-( 357, 'Condescending', 'Swanson', 6, 30)
-( 358, 'Naughty', 'Johnson', 9, 26)
-( 359, 'Loving', 'Montalcini', 4, 3)
-( 360, 'Ecstatic', 'Mestorf', 1, 21)
-( 361, 'Naughty', 'Boyd', 14, 17)
-( 362, 'Nostalgic', 'Kare', 0, 22)
-( 363, 'Festive', 'Kalam', 18, 5)
-( 364, 'Flamboyant', 'Euler', 16, 38)
-( 365, 'Goofy', 'Leavitt', 19, 30)
-( 366, 'Eloquent', 'Gagarin', 9, 19)
-( 367, 'Quizzical', 'Yonath', 16, 2)
-( 368, 'Dreamy', 'Edison', 2, 21)
-( 369, 'Elated', 'Rubin', 0, 24)
-( 370, 'Inspiring', 'Keldysh', 2, 12)
-( 371, 'Adoring', 'Napier', 16, 49)
-( 372, 'Laughing', 'Stonebraker', 9, 27)
-( 373, 'Gifted', 'Pare', 6, 50)
-( 374, 'Jolly', 'Torvalds', 9, 20)
-( 375, 'Affectionate', 'Swanson', 19, 16)
-( 376, 'Vigilant', 'Shamir', 7, 3)
-( 377, 'Sharp', 'Vaughan', 8, 31)
-( 378, 'Ecstatic', 'Proskuriakova', 0, 12)
-( 379, 'Keen', 'Nobel', 12, 35)
-( 380, 'Boring', 'Chatterjee', 12, 41)
-( 381, 'Sad', 'Wilbur', 15, 20)
-( 382, 'Nostalgic', 'Khorana', 2, 25)
-( 383, 'Bold', 'Matsumoto', 19, 32)
-( 384, 'Thirsty', 'Darwin', 7, 13)
-( 385, 'Affectionate', 'Bassi', 17, 6)
-( 386, 'Affectionate', 'Colden', 3, 44)
-( 387, 'Awesome', 'Ganguly', 20, 27)
-( 388, 'Recursing', 'Ptolemy', 6, 9)
-( 389, 'Dazzling', 'Liskov', 5, 33)
-( 390, 'Condescending', 'Hopper', 11, 7)
-( 391, 'Heuristic', 'Volhard', 17, 2)
-( 392, 'Romantic', 'Nash', 9, 30)
-( 393, 'Distracted', 'Panini', 6, 49)
-( 394, 'Sweet', 'Rhodes', 5, 12)
-( 395, 'Loving', 'Zhukovsky', 3, 46)
-( 396, 'Eloquent', 'Davinci', 20, 41)
-( 397, 'Fervent', 'Lehmann', 0, 41)
-( 398, 'Loving', 'Rubin', 6, 23)
-( 399, 'Crazy', 'Napier', 18, 18)
-( 400, 'Intelligent', 'Bassi', 17, 38)
-( 401, 'Funny', 'Hermann', 6, 42)
-( 402, 'Jovial', 'Joliot', 10, 7)
-( 403, 'Adoring', 'Bose', 6, 7)
-( 404, 'Suspicious', 'Cohen', 13, 21)
-( 405, 'Festive', 'Hamilton', 0, 20)
-( 406, 'Goofy', 'Cori', 1, 22)
-( 407, 'Adoring', 'Varahamihira', 5, 34)
-( 408, 'Cranky', 'Franklin', 2, 17)
-( 409, 'Heuristic', 'Hodgkin', 6, 30)
-( 410, 'Awesome', 'Almeida', 11, 48)
-( 411, 'Great', 'Black', 8, 12)
-( 412, 'Distracted', 'Northcutt', 5, 42)
-( 413, 'Nervous', 'Lamarr', 14, 17)
-( 414, 'Gifted', 'Golick', 8, 21)
-( 415, 'Gallant', 'Kirch', 11, 49)
-( 416, 'Brave', 'Mcclintock', 10, 21)
-( 417, 'Objective', 'Franklin', 18, 38)
-( 418, 'Trusting', 'Pasteur', 15, 43)
-( 419, 'Wonderful', 'Lamarr', 2, 12)
-( 420, 'Pedantic', 'Shannon', 9, 47)
-( 421, 'Frosty', 'Banzai', 16, 7)
-( 422, 'Flamboyant', 'Germain', 19, 29)
-( 423, 'Determined', 'Dhawan', 9, 26)
-( 424, 'Laughing', 'Hodgkin', 19, 6)
-( 425, 'Lucid', 'Lalande', 4, 47)
-( 426, 'Pedantic', 'Sutherland', 8, 26)
-( 427, 'Reverent', 'Pasteur', 19, 24)
-( 428, 'Tender', 'Beaver', 11, 43)
-( 429, 'Boring', 'Morse', 1, 36)
-( 430, 'Clever', 'Tereshkova', 20, 35)
-( 431, 'Hungry', 'Mestorf', 4, 13)
-( 432, 'Nervous', 'Morse', 20, 39)
-( 433, 'Quirky', 'Mayer', 3, 31)
-( 434, 'Busy', 'Leakey', 16, 13)
-( 435, 'Confident', 'Pare', 14, 46)
-( 436, 'Priceless', 'Bardeen', 11, 25)
-( 437, 'Hardcore', 'Mcnulty', 3, 38)
-( 438, 'Determined', 'Cannon', 11, 31)
-( 439, 'Laughing', 'Tu', 5, 20)
-( 440, 'Happy', 'Nobel', 4, 7)
-( 441, 'Admiring', 'Edison', 5, 24)
-( 442, 'Beautiful', 'Joliot', 10, 14)
-( 443, 'Frosty', 'Bhaskara', 12, 15)
-( 444, 'Reverent', 'Pare', 10, 28)
-( 445, 'Great', 'Wu', 19, 18)
-( 446, 'Laughing', 'Murdock', 8, 46)
-( 447, 'Suspicious', 'Jang', 8, 46)
-( 448, 'Practical', 'Euler', 20, 42)
-( 449, 'Flamboyant', 'Sammet', 1, 2)
-( 450, 'Boring', 'Kilby', 12, 44)
-( 451, 'Mystifying', 'Thompson', 11, 11)
-( 452, 'Clever', 'Zhukovsky', 4, 13)
-( 453, 'Amazing', 'Chebyshev', 9, 25)
-( 454, 'Vigilant', 'Roentgen', 6, 13)
-( 455, 'Hopeful', 'Tharp', 16, 13)
-( 456, 'Cool', 'Leavitt', 7, 8)
-( 457, 'Elated', 'Jennings', 4, 14)
-( 458, 'Agitated', 'Pare', 16, 28)
-( 459, 'Hardcore', 'Ritchie', 7, 36)
-( 460, 'Dazzling', 'Fermi', 4, 3)
-( 461, 'Ecstatic', 'Lovelace', 8, 44)
-( 462, 'Great', 'Bose', 12, 27)
-( 463, 'Gallant', 'Feistel', 0, 39)
-( 464, 'Eager', 'Shirley', 9, 3)
-( 465, 'Stupefied', 'Dijkstra', 9, 29)
-( 466, 'Exciting', 'Sammet', 9, 4)
-( 467, 'Happy', 'Newton', 3, 42)
-( 468, 'Admiring', 'Keller', 13, 22)
-( 469, 'Friendly', 'Wu', 0, 37)
-( 470, 'Unruffled', 'Blackwell', 9, 19)
-( 471, 'Practical', 'Bohr', 10, 42)
-( 472, 'Admiring', 'Satoshi', 10, 6)
-( 473, 'Quizzical', 'Mcclintock', 5, 11)
-( 474, 'Quizzical', 'Dirac', 12, 47)
-( 475, 'Suspicious', 'Mendel', 10, 11)
-( 476, 'Hardcore', 'Merkle', 4, 10)
-( 477, 'Wonderful', 'Thompson', 10, 41)
-( 478, 'Naughty', 'Blackwell', 11, 10)
-( 479, 'Quizzical', 'Shockley', 18, 11)
-( 480, 'Mystifying', 'Ellis', 11, 35)
-( 481, 'Busy', 'Goldwasser', 11, 13)
-( 482, 'Goofy', 'Lamarr', 16, 34)
-( 483, 'Laughing', 'Wing', 11, 11)
-( 484, 'Flamboyant', 'Ritchie', 1, 16)
-( 485, 'Youthful', 'Carson', 3, 15)
-( 486, 'Vibrant', 'Hoover', 4, 24)
-( 487, 'Dreamy', 'Ganguly', 1, 42)
-( 488, 'Quirky', 'Jepsen', 12, 9)
-( 489, 'Gracious', 'Tesla', 10, 41)
-( 490, 'Musing', 'Mirzakhani', 20, 1)
-( 491, 'Blissful', 'Bose', 16, 48)
-( 492, 'Nice', 'Cray', 7, 14)
-( 493, 'Vibrant', 'Williamson', 12, 50)
-( 494, 'Dazzling', 'Murdock', 7, 41)
-( 495, 'Strange', 'Bassi', 16, 40)
-( 496, 'Nice', 'Hertz', 8, 26)
-( 497, 'Agitated', 'Ellis', 18, 46)
-( 498, 'Agitated', 'Snyder', 4, 27)
-( 499, 'Pedantic', 'Ramanujan', 10, 50)
-( 500, 'Quizzical', 'Edison', 5, 30)
+( 1, 'Cool', 'Tereshkova', 4, 34),
+( 2, 'Zen', 'Bohr', 2, 3),
+( 3, 'Funny', 'Lehmann', 6, 3),
+( 4, 'Distracted', 'Jepsen', 3, 9),
+( 5, 'Pedantic', 'Morse', 7, 18),
+( 6, 'Nifty', 'Goldstine', 10, 15),
+( 7, 'Trusting', 'Bose', 9, 49),
+( 8, 'Xenodochial', 'Agnesi', 3, 50),
+( 9, 'Vigorous', 'Greider', 0, 7),
+( 10, 'Condescending', 'Mendel', 10, 47),
+( 11, 'Charming', 'Booth', 2, 44),
+( 12, 'Distracted', 'Lamport', 1, 44),
+( 13, 'Hopeful', 'Knuth', 10, 32),
+( 14, 'Clever', 'Bassi', 1, 16),
+( 15, 'Condescending', 'Boyd', 6, 24),
+( 16, 'Priceless', 'Raman', 8, 50),
+( 17, 'Stoic', 'Merkle', 5, 48),
+( 18, 'Optimistic', 'Faraday', 9, 50),
+( 19, 'Naughty', 'Lederberg', 6, 20),
+( 20, 'Unruffled', 'Lalande', 2, 24),
+( 21, 'Recursing', 'Yalow', 4, 9),
+( 22, 'Dreamy', 'Northcutt', 7, 33),
+( 23, 'Elastic', 'Allen', 4, 29),
+( 24, 'Bold', 'Albattani', 10, 3),
+( 25, 'Reverent', 'Cohen', 6, 15),
+( 26, 'Peaceful', 'Tesla', 7, 22),
+( 27, 'Frosty', 'Curie', 8, 36),
+( 28, 'Brave', 'Greider', 2, 27),
+( 29, 'Brave', 'Ride', 10, 19),
+( 30, 'Serene', 'Sinoussi', 3, 40),
+( 31, 'Elegant', 'Wing', 5, 44),
+( 32, 'Boring', 'Heisenberg', 5, 10),
+( 33, 'Hopeful', 'Chatterjee', 4, 31),
+( 34, 'Kind', 'Meninsky', 5, 48),
+( 35, 'Thirsty', 'Chaplygin', 3, 4),
+( 36, 'Zealous', 'Wilbur', 2, 2),
+( 37, 'Great', 'Bartik', 5, 44),
+( 38, 'Elastic', 'Cerf', 6, 15),
+( 39, 'Zen', 'Lamarr', 5, 47),
+( 40, 'Busy', 'Pascal', 9, 22),
+( 41, 'Hungry', 'Morse', 4, 26),
+( 42, 'Flamboyant', 'Brahmagupta', 1, 13),
+( 43, 'Infallible', 'Almeida', 8, 22),
+( 44, 'Competent', 'Brattain', 1, 44),
+( 45, 'Pedantic', 'Driscoll', 10, 51),
+( 46, 'Eloquent', 'Bell', 3, 51),
+( 47, 'Nostalgic', 'Blackwell', 5, 4),
+( 48, 'Happy', 'Meninsky', 2, 36),
+( 49, 'Inspiring', 'Hodgkin', 6, 5),
+( 50, 'Focused', 'Cartwright', 0, 18),
+( 51, 'Inspiring', 'Blackburn', 10, 8),
+( 52, 'Determined', 'Babbage', 4, 18),
+( 53, 'Zen', 'Darwin', 9, 24),
+( 54, 'Serene', 'Solomon', 20, 17),
+( 55, 'Beautiful', 'Nightingale', 8, 21),
+( 56, 'Eloquent', 'Shamir', 5, 19),
+( 57, 'Wizardly', 'Solomon', 11, 4),
+( 58, 'Stupefied', 'Cerf', 0, 15),
+( 59, 'Strange', 'Liskov', 12, 25),
+( 60, 'Wonderful', 'Williamson', 11, 47),
+( 61, 'Amazing', 'Cori', 2, 22),
+( 62, 'Quirky', 'Greider', 19, 48),
+( 63, 'Brave', 'Sinoussi', 20, 46),
+( 64, 'Xenodochial', 'Chaum', 4, 22),
+( 65, 'Upbeat', 'Ptolemy', 17, 25),
+( 66, 'Elastic', 'Keller', 20, 2),
+( 67, 'Dazzling', 'Khayyam', 1, 43),
+( 68, 'Wizardly', 'Hypatia', 11, 16),
+( 69, 'Cool', 'Bhabha', 9, 42),
+( 70, 'Laughing', 'Swirles', 15, 29),
+( 71, 'Vibrant', 'Yalow', 0, 23),
+( 72, 'Sharp', 'Spence', 7, 17),
+( 73, 'Angry', 'Lamport', 7, 15),
+( 74, 'Eloquent', 'Newton', 3, 32),
+( 75, 'Beautiful', 'Goodall', 14, 20),
+( 76, 'Naughty', 'Gagarin', 14, 21),
+( 77, 'Upbeat', 'Cannon', 6, 50),
+( 78, 'Festive', 'Perlman', 2, 14),
+( 79, 'Wonderful', 'Poitras', 19, 35),
+( 80, 'Upbeat', 'Dewdney', 10, 38),
+( 81, 'Elated', 'Burnell', 18, 24),
+( 82, 'Objective', 'Meninsky', 12, 44),
+( 83, 'Determined', 'Margulis', 0, 35),
+( 84, 'Condescending', 'Hypatia', 4, 24),
+( 85, 'Quizzical', 'Williamson', 13, 48),
+( 86, 'Determined', 'Hermann', 20, 23),
+( 87, 'Sweet', 'Zhukovsky', 8, 36),
+( 88, 'Fervent', 'Mendeleev', 13, 44),
+( 89, 'Amazing', 'Mirzakhani', 8, 5),
+( 90, 'Quirky', 'Swartz', 1, 9),
+( 91, 'Nervous', 'Vaughan', 2, 15),
+( 92, 'Confident', 'Tereshkova', 12, 46),
+( 93, 'Nice', 'Pare', 1, 44),
+( 94, 'Competent', 'Cray', 11, 3),
+( 95, 'Confident', 'Jang', 1, 22),
+( 96, 'Stoic', 'Greider', 2, 1),
+( 97, 'Loving', 'Johnson', 7, 6),
+( 98, 'Dazzling', 'Hawking', 3, 23),
+( 99, 'Practical', 'Wilson', 17, 33),
+( 100, 'Tender', 'Dirac', 19, 41),
+( 101, 'Flamboyant', 'Benz', 7, 43),
+( 102, 'Vigilant', 'Chandrasekhar', 14, 15),
+( 103, 'Admiring', 'Ritchie', 13, 43),
+( 104, 'Lucid', 'Einstein', 7, 38),
+( 105, 'Eloquent', 'Mclean', 19, 6),
+( 106, 'Busy', 'Curran', 7, 50),
+( 107, 'Wizardly', 'Banach', 8, 6),
+( 108, 'Lucid', 'Golick', 4, 45),
+( 109, 'Nostalgic', 'Northcutt', 0, 12),
+( 110, 'Zealous', 'Neumann', 20, 43),
+( 111, 'Stupefied', 'Benz', 8, 48),
+( 112, 'Determined', 'Tu', 4, 23),
+( 113, 'Sleepy', 'Wu', 3, 21),
+( 114, 'Recursing', 'Rosalind', 17, 26),
+( 115, 'Eager', 'Beaver', 11, 26),
+( 116, 'Wizardly', 'Hertz', 9, 12),
+( 117, 'Reverent', 'Boyd', 6, 3),
+( 118, 'Jovial', 'Goldstine', 19, 12),
+( 119, 'Funny', 'Saha', 2, 6),
+( 120, 'Strange', 'Galileo', 4, 36),
+( 121, 'Objective', 'Edison', 1, 35),
+( 122, 'Upbeat', 'Grothendieck', 7, 12),
+( 123, 'Hopeful', 'Mendeleev', 3, 18),
+( 124, 'Eloquent', 'Mcnulty', 8, 22),
+( 125, 'Zen', 'Banzai', 18, 20),
+( 126, 'Epic', 'Wozniak', 11, 10),
+( 127, 'Exciting', 'Neumann', 7, 48),
+( 128, 'Elated', 'Pasteur', 0, 11),
+( 129, 'Quirky', 'Cori', 6, 18),
+( 130, 'Amazing', 'Dijkstra', 20, 34),
+( 131, 'Lucid', 'Keller', 2, 31),
+( 132, 'Keen', 'Kalam', 3, 10),
+( 133, 'Beautiful', 'Keldysh', 6, 18),
+( 134, 'Unruffled', 'Gould', 15, 25),
+( 135, 'Stoic', 'Goldstine', 6, 11),
+( 136, 'Objective', 'Tereshkova', 8, 23),
+( 137, 'Lucid', 'Galois', 16, 26),
+( 138, 'Compassionate', 'Roentgen', 4, 39),
+( 139, 'Heuristic', 'Germain', 9, 10),
+( 140, 'Nice', 'Dijkstra', 17, 7),
+( 141, 'Unruffled', 'Satoshi', 6, 46),
+( 142, 'Interesting', 'Ramanujan', 0, 45),
+( 143, 'Intelligent', 'Benz', 9, 16),
+( 144, 'Agitated', 'Mendel', 20, 17),
+( 145, 'Great', 'Chatterjee', 5, 24),
+( 146, 'Inspiring', 'Haibt', 3, 28),
+( 147, 'Modest', 'Margulis', 12, 32),
+( 148, 'Stoic', 'Wescoff', 19, 20),
+( 149, 'Serene', 'Hamilton', 8, 39),
+( 150, 'Focused', 'Hypatia', 3, 16),
+( 151, 'Blissful', 'Nobel', 4, 28),
+( 152, 'Frosty', 'Ishizaka', 14, 30),
+( 153, 'Admiring', 'Matsumoto', 7, 39),
+( 154, 'Naughty', 'Kilby', 9, 48),
+( 155, 'Blissful', 'Bardeen', 1, 21),
+( 156, 'Naughty', 'Keldysh', 6, 36),
+( 157, 'Distracted', 'Rhodes', 9, 13),
+( 158, 'Charming', 'Mendeleev', 3, 50),
+( 159, 'Gracious', 'Dijkstra', 7, 47),
+( 160, 'Funny', 'Goldberg', 8, 15),
+( 161, 'Eloquent', 'Wing', 8, 40),
+( 162, 'Youthful', 'Thompson', 19, 29),
+( 163, 'Ecstatic', 'Galois', 7, 45),
+( 164, 'Loving', 'Wilbur', 3, 31),
+( 165, 'Agitated', 'Roentgen', 2, 50),
+( 166, 'Sleepy', 'Keldysh', 0, 20),
+( 167, 'Elated', 'Taussig', 3, 43),
+( 168, 'Stupefied', 'Ganguly', 13, 7),
+( 169, 'Naughty', 'Solomon', 3, 45),
+( 170, 'Heuristic', 'Chandrasekhar', 7, 29),
+( 171, 'Sad', 'Bhaskara', 6, 38),
+( 172, 'Cranky', 'Gauss', 1, 1),
+( 173, 'Ecstatic', 'Goodall', 1, 20),
+( 174, 'Sad', 'Carson', 1, 31),
+( 175, 'Fervent', 'Varahamihira', 4, 40),
+( 176, 'Confident', 'Jackson', 11, 43),
+( 177, 'Trusting', 'Engelbart', 0, 47),
+( 178, 'Festive', 'Cartwright', 3, 39),
+( 179, 'Objective', 'Satoshi', 17, 16),
+( 180, 'Goofy', 'Kapitsa', 1, 37),
+( 181, 'Ecstatic', 'Margulis', 3, 24),
+( 182, 'Exciting', 'Vaughan', 3, 9),
+( 183, 'Beautiful', 'Swanson', 11, 26),
+( 184, 'Elated', 'Lamarr', 18, 18),
+( 185, 'Friendly', 'Hugle', 19, 2),
+( 186, 'Brave', 'Thompson', 13, 13),
+( 187, 'Vigilant', 'Turing', 17, 11),
+( 188, 'Blissful', 'Goldberg', 11, 10),
+( 189, 'Laughing', 'Raman', 18, 45),
+( 190, 'Romantic', 'Feistel', 8, 4),
+( 191, 'Thirsty', 'Babbage', 8, 29),
+( 192, 'Compassionate', 'Buck', 3, 7),
+( 193, 'Dazzling', 'Feistel', 4, 37),
+( 194, 'Suspicious', 'Mestorf', 12, 9),
+( 195, 'Inspiring', 'Zhukovsky', 10, 8),
+( 196, 'Pensive', 'Shaw', 19, 19),
+( 197, 'Dazzling', 'Mccarthy', 2, 19),
+( 198, 'Quirky', 'Villani', 6, 13),
+( 199, 'Adoring', 'Bouman', 16, 14),
+( 200, 'Youthful', 'Archimedes', 4, 8),
+( 201, 'Dazzling', 'Hugle', 6, 25),
+( 202, 'Lucid', 'Easley', 8, 36),
+( 203, 'Cool', 'Mcclintock', 5, 30),
+( 204, 'Optimistic', 'Yonath', 3, 12),
+( 205, 'Heuristic', 'Sinoussi', 18, 9),
+( 206, 'Strange', 'Swartz', 20, 10),
+( 207, 'Funny', 'Napier', 1, 37),
+( 208, 'Vigorous', 'Moore', 4, 42),
+( 209, 'Zen', 'Rubin', 14, 1),
+( 210, 'Hopeful', 'Sanderson', 20, 25),
+( 211, 'Recursing', 'Yalow', 16, 40),
+( 212, 'Jolly', 'Tereshkova', 7, 40),
+( 213, 'Focused', 'Lumiere', 18, 29),
+( 214, 'Hopeful', 'Swirles', 8, 5),
+( 215, 'Unruffled', 'Feynman', 15, 49),
+( 216, 'Adoring', 'Zhukovsky', 9, 46),
+( 217, 'Clever', 'Greider', 20, 2),
+( 218, 'Reverent', 'Perlman', 8, 3),
+( 219, 'Elastic', 'Keldysh', 5, 36),
+( 220, 'Interesting', 'Jang', 18, 46),
+( 221, 'Exciting', 'Payne', 18, 18),
+( 222, 'Relaxed', 'Thompson', 3, 11),
+( 223, 'Trusting', 'Wilbur', 18, 50),
+( 224, 'Vibrant', 'Babbage', 11, 7),
+( 225, 'Exciting', 'Morse', 11, 1),
+( 226, 'Confident', 'Poincare', 3, 15),
+( 227, 'Priceless', 'Albattani', 11, 46),
+( 228, 'Angry', 'Payne', 19, 31),
+( 229, 'Magical', 'Pasteur', 11, 41),
+( 230, 'Sharp', 'Cannon', 3, 15),
+( 231, 'Relaxed', 'Dirac', 8, 11),
+( 232, 'Gifted', 'Kapitsa', 1, 8),
+( 233, 'Festive', 'Goldberg', 17, 38),
+( 234, 'Nervous', 'Kapitsa', 1, 45),
+( 235, 'Sharp', 'Shirley', 18, 36),
+( 236, 'Elegant', 'Maxwell', 12, 8),
+( 237, 'Hungry', 'Lederberg', 1, 10),
+( 238, 'Quirky', 'Perlman', 8, 1),
+( 239, 'Adoring', 'Vaughan', 16, 24),
+( 240, 'Inspiring', 'Montalcini', 6, 8),
+( 241, 'Priceless', 'Meninsky', 6, 15),
+( 242, 'Dazzling', 'Jones', 4, 3),
+( 243, 'Funny', 'Franklin', 5, 6),
+( 244, 'Quirky', 'Franklin', 5, 33),
+( 245, 'Bold', 'Hellman', 11, 32),
+( 246, 'Crazy', 'Rhodes', 3, 13),
+( 247, 'Youthful', 'Bell', 13, 23),
+( 248, 'Serene', 'Gauss', 12, 39),
+( 249, 'Goofy', 'Swanson', 10, 49),
+( 250, 'Frosty', 'Jepsen', 16, 17),
+( 251, 'Crazy', 'Bartik', 4, 8),
+( 252, 'Sleepy', 'Tharp', 1, 8),
+( 253, 'Cool', 'Panini', 14, 12),
+( 254, 'Practical', 'Borg', 15, 21),
+( 255, 'Eloquent', 'Elion', 16, 40),
+( 256, 'Brave', 'Banzai', 19, 14),
+( 257, 'Keen', 'Perlman', 3, 38),
+( 258, 'Tender', 'Lamport', 10, 5),
+( 259, 'Festive', 'Mendel', 2, 10),
+( 260, 'Peaceful', 'Elbakyan', 15, 38),
+( 261, 'Mystifying', 'Cerf', 17, 48),
+( 262, 'Determined', 'Joliot', 1, 5),
+( 263, 'Vigilant', 'Driscoll', 4, 8),
+( 264, 'Sweet', 'Lewin', 6, 23),
+( 265, 'Busy', 'Colden', 12, 14),
+( 266, 'Confident', 'Shamir', 3, 27),
+( 267, 'Zealous', 'Northcutt', 12, 37),
+( 268, 'Infallible', 'Curie', 11, 22),
+( 269, 'Pensive', 'Shockley', 7, 50),
+( 270, 'Vigorous', 'Colden', 7, 21),
+( 271, 'Determined', 'Aryabhata', 2, 30),
+( 272, 'Elegant', 'Fermat', 1, 6),
+( 273, 'Condescending', 'Newton', 11, 15),
+( 274, 'Modest', 'Agnesi', 17, 48),
+( 275, 'Dreamy', 'Agnesi', 10, 50),
+( 276, 'Keen', 'Chandrasekhar', 6, 33),
+( 277, 'Focused', 'Austin', 1, 20),
+( 278, 'Fervent', 'Poitras', 15, 32),
+( 279, 'Lucid', 'Lamport', 11, 15),
+( 280, 'Hardcore', 'Lamport', 11, 15),
+( 281, 'Unruffled', 'Joliot', 0, 11),
+( 282, 'Boring', 'Chandrasekhar', 15, 41),
+( 283, 'Heuristic', 'Wozniak', 18, 18),
+( 284, 'Naughty', 'Elbakyan', 15, 11),
+( 285, 'Recursing', 'Gauss', 6, 23),
+( 286, 'Suspicious', 'Albattani', 9, 26),
+( 287, 'Vibrant', 'Lovelace', 8, 12),
+( 288, 'Sweet', 'Moser', 17, 34),
+( 289, 'Intelligent', 'Turing', 9, 32),
+( 290, 'Hungry', 'Shannon', 19, 31),
+( 291, 'Youthful', 'Chandrasekhar', 7, 50),
+( 292, 'Stoic', 'Wing', 6, 46),
+( 293, 'Dazzling', 'Swartz', 7, 13),
+( 294, 'Sweet', 'Tu', 17, 9),
+( 295, 'Nifty', 'Engelbart', 20, 42),
+( 296, 'Admiring', 'Keller', 5, 31),
+( 297, 'Eloquent', 'Tharp', 17, 13),
+( 298, 'Focused', 'Payne', 6, 19),
+( 299, 'Suspicious', 'Montalcini', 16, 10),
+( 300, 'Distracted', 'Ganguly', 0, 37),
+( 301, 'Tender', 'Heisenberg', 19, 47),
+( 302, 'Blissful', 'Einstein', 7, 12),
+( 303, 'Kind', 'Driscoll', 0, 24),
+( 304, 'Awesome', 'Euclid', 4, 25),
+( 305, 'Intelligent', 'Bartik', 12, 12),
+( 306, 'Heuristic', 'Jepsen', 10, 10),
+( 307, 'Busy', 'Varahamihira', 2, 33),
+( 308, 'Wonderful', 'Cray', 13, 40),
+( 309, 'Wonderful', 'Mendel', 6, 28),
+( 310, 'Amazing', 'Nobel', 10, 15),
+( 311, 'Distracted', 'Lederberg', 20, 17),
+( 312, 'Sleepy', 'Margulis', 3, 15),
+( 313, 'Festive', 'Shirley', 8, 35),
+( 314, 'Gifted', 'Shockley', 19, 22),
+( 315, 'Upbeat', 'Herschel', 9, 2),
+( 316, 'Kind', 'Tharp', 7, 22),
+( 317, 'Xenodochial', 'Cerf', 7, 21),
+( 318, 'Strange', 'Hertz', 10, 37),
+( 319, 'Sweet', 'Proskuriakova', 18, 19),
+( 320, 'Dreamy', 'Buck', 0, 2),
+( 321, 'Naughty', 'Mcnulty', 3, 40),
+( 322, 'Admiring', 'Black', 4, 24),
+( 323, 'Amazing', 'Payne', 4, 5),
+( 324, 'Affectionate', 'Jennings', 4, 3),
+( 325, 'Gallant', 'Bouman', 20, 27),
+( 326, 'Interesting', 'Yalow', 10, 16),
+( 327, 'Jolly', 'Williamson', 13, 37),
+( 328, 'Fervent', 'Lewin', 0, 46),
+( 329, 'Intelligent', 'Johnson', 9, 28),
+( 330, 'Vigilant', 'Clarke', 1, 50),
+( 331, 'Determined', 'Mclean', 12, 13),
+( 332, 'Naughty', 'Gould', 19, 1),
+( 333, 'Goofy', 'Buck', 13, 23),
+( 334, 'Zealous', 'Gagarin', 4, 29),
+( 335, 'Wonderful', 'Benz', 19, 32),
+( 336, 'Compassionate', 'Noyce', 14, 3),
+( 337, 'Great', 'Bartik', 5, 46),
+( 338, 'Youthful', 'Dhawan', 6, 19),
+( 339, 'Wonderful', 'Kirch', 7, 38),
+( 340, 'Vigorous', 'Brattain', 1, 32),
+( 341, 'Brave', 'Joliot', 12, 7),
+( 342, 'Unruffled', 'Saha', 1, 43),
+( 343, 'Elated', 'Mclean', 16, 25),
+( 344, 'Happy', 'Engelbart', 10, 21),
+( 345, 'Inspiring', 'Proskuriakova', 0, 25),
+( 346, 'Xenodochial', 'Wiles', 4, 32),
+( 347, 'Distracted', 'Roentgen', 16, 19),
+( 348, 'Jolly', 'Perlman', 2, 43),
+( 349, 'Quizzical', 'Matsumoto', 9, 31),
+( 350, 'Dreamy', 'Montalcini', 5, 43),
+( 351, 'Hardcore', 'Almeida', 1, 50),
+( 352, 'Competent', 'Hopper', 2, 29),
+( 353, 'Xenodochial', 'Austin', 5, 43),
+( 354, 'Wonderful', 'Noether', 4, 12),
+( 355, 'Hungry', 'Curran', 18, 29),
+( 356, 'Hopeful', 'Ardinghelli', 15, 11),
+( 357, 'Interesting', 'Goodall', 11, 23),
+( 358, 'Sharp', 'Curie', 10, 2),
+( 359, 'Nifty', 'Faraday', 3, 29),
+( 360, 'Happy', 'Bhabha', 14, 34),
+( 361, 'Strange', 'Heisenberg', 5, 2),
+( 362, 'Modest', 'Bell', 15, 38),
+( 363, 'Practical', 'Einstein', 15, 40),
+( 364, 'Distracted', 'Heisenberg', 4, 28),
+( 365, 'Reverent', 'Ganguly', 0, 41),
+( 366, 'Priceless', 'Einstein', 0, 27),
+( 367, 'Epic', 'Clarke', 3, 43),
+( 368, 'Friendly', 'Dubinsky', 18, 3),
+( 369, 'Peaceful', 'Pare', 8, 23),
+( 370, 'Adoring', 'Kalam', 15, 29),
+( 371, 'Infallible', 'Williams', 8, 11),
+( 372, 'Admiring', 'Knuth', 10, 11),
+( 373, 'Hungry', 'Gates', 1, 9),
+( 374, 'Dazzling', 'Lichterman', 15, 1),
+( 375, 'Keen', 'Spence', 8, 31),
+( 376, 'Keen', 'Chatterjee', 7, 20),
+( 377, 'Sleepy', 'Faraday', 11, 5),
+( 378, 'Boring', 'Proskuriakova', 6, 15),
+( 379, 'Upbeat', 'Gould', 1, 50),
+( 380, 'Elastic', 'Elion', 9, 9),
+( 381, 'Practical', 'Euclid', 12, 17),
+( 382, 'Trusting', 'Hugle', 4, 47),
+( 383, 'Modest', 'Panini', 18, 15),
+( 384, 'Sweet', 'Spence', 4, 37),
+( 385, 'Frosty', 'Maxwell', 1, 45),
+( 386, 'Elastic', 'Archimedes', 3, 32),
+( 387, 'Ecstatic', 'Faraday', 2, 46),
+( 388, 'Unruffled', 'Liskov', 13, 40),
+( 389, 'Funny', 'Grothendieck', 3, 50),
+( 390, 'Determined', 'Hodgkin', 12, 41),
+( 391, 'Zealous', 'Dubinsky', 4, 25),
+( 392, 'Heuristic', 'Hoover', 5, 41),
+( 393, 'Festive', 'Pike', 12, 27),
+( 394, 'Great', 'Antonelli', 7, 49),
+( 395, 'Affectionate', 'Neumann', 7, 28),
+( 396, 'Relaxed', 'Pare', 17, 10),
+( 397, 'Jovial', 'Hypatia', 6, 30),
+( 398, 'Sharp', 'Montalcini', 4, 37),
+( 399, 'Charming', 'Antonelli', 14, 22),
+( 400, 'Jolly', 'Morse', 20, 27),
+( 401, 'Naughty', 'Borg', 13, 21),
+( 402, 'Clever', 'Albattani', 1, 18),
+( 403, 'Optimistic', 'Fermi', 13, 19),
+( 404, 'Sleepy', 'Jepsen', 4, 45),
+( 405, 'Upbeat', 'Gauss', 20, 14),
+( 406, 'Nifty', 'Cartwright', 10, 19),
+( 407, 'Elastic', 'Swanson', 9, 41),
+( 408, 'Boring', 'Dewdney', 11, 8),
+( 409, 'Elegant', 'Cohen', 1, 17),
+( 410, 'Loving', 'Noether', 6, 9),
+( 411, 'Upbeat', 'Bhabha', 16, 40),
+( 412, 'Zen', 'Heisenberg', 1, 43),
+( 413, 'Boring', 'Euler', 20, 33),
+( 414, 'Admiring', 'Franklin', 10, 37),
+( 415, 'Distracted', 'Burnell', 3, 20),
+( 416, 'Goofy', 'Liskov', 5, 38),
+( 417, 'Eloquent', 'Napier', 2, 5),
+( 418, 'Sweet', 'Chaplygin', 11, 12),
+( 419, 'Agitated', 'Lamport', 2, 5),
+( 420, 'Peaceful', 'Varahamihira', 12, 44),
+( 421, 'Cranky', 'Wu', 11, 14),
+( 422, 'Eager', 'Cerf', 18, 45),
+( 423, 'Goofy', 'Dhawan', 18, 30),
+( 424, 'Musing', 'Wilbur', 5, 40),
+( 425, 'Ecstatic', 'Hermann', 14, 5),
+( 426, 'Stoic', 'Bardeen', 14, 23),
+( 427, 'Happy', 'Bassi', 1, 40),
+( 428, 'Awesome', 'Moore', 17, 32),
+( 429, 'Flamboyant', 'Heyrovsky', 2, 7),
+( 430, 'Compassionate', 'Curran', 3, 21),
+( 431, 'Modest', 'Mcnulty', 10, 6),
+( 432, 'Nifty', 'Hertz', 7, 19),
+( 433, 'Charming', 'Lalande', 2, 28),
+( 434, 'Bold', 'Spence', 0, 36),
+( 435, 'Blissful', 'Ishizaka', 10, 16),
+( 436, 'Angry', 'Clarke', 18, 22),
+( 437, 'Charming', 'Albattani', 7, 22),
+( 438, 'Sad', 'Fermi', 18, 46),
+( 439, 'Reverent', 'Wozniak', 11, 36),
+( 440, 'Admiring', 'Poincare', 2, 17),
+( 441, 'Lucid', 'Bardeen', 10, 43),
+( 442, 'Pedantic', 'Chatterjee', 13, 45),
+( 443, 'Silly', 'Napier', 18, 35),
+( 444, 'Blissful', 'Rosalind', 3, 24),
+( 445, 'Vibrant', 'Swanson', 16, 26),
+( 446, 'Serene', 'Hopper', 3, 48),
+( 447, 'Nervous', 'Benz', 2, 31),
+( 448, 'Reverent', 'Feynman', 12, 2),
+( 449, 'Elegant', 'Lamarr', 4, 23),
+( 450, 'Pensive', 'Darwin', 6, 26),
+( 451, 'Adoring', 'Goldwasser', 2, 4),
+( 452, 'Happy', 'Meninsky', 12, 29),
+( 453, 'Elated', 'Matsumoto', 3, 18),
+( 454, 'Pedantic', 'Goldwasser', 3, 47),
+( 455, 'Frosty', 'Euclid', 2, 18),
+( 456, 'Compassionate', 'Germain', 11, 34),
+( 457, 'Brave', 'Wing', 4, 36),
+( 458, 'Sad', 'Antonelli', 10, 2),
+( 459, 'Silly', 'Vaughan', 2, 2),
+( 460, 'Kind', 'Swanson', 18, 40),
+( 461, 'Objective', 'Wilson', 2, 24),
+( 462, 'Hardcore', 'Cray', 3, 31),
+( 463, 'Unruffled', 'Volhard', 12, 34),
+( 464, 'Goofy', 'Noyce', 3, 45),
+( 465, 'Eloquent', 'Cannon', 17, 27),
+( 466, 'Crazy', 'Wilson', 2, 22),
+( 467, 'Upbeat', 'Napier', 14, 15),
+( 468, 'Sad', 'Brahmagupta', 12, 44),
+( 469, 'Gifted', 'Hopper', 11, 43),
+( 470, 'Great', 'Buck', 13, 3),
+( 471, 'Friendly', 'Matsumoto', 11, 3),
+( 472, 'Frosty', 'Neumann', 8, 40),
+( 473, 'Serene', 'Volhard', 16, 33),
+( 474, 'Sweet', 'Zhukovsky', 10, 39),
+( 475, 'Gifted', 'Moser', 9, 13),
+( 476, 'Stupefied', 'Rubin', 3, 33),
+( 477, 'Confident', 'Wilson', 3, 42),
+( 478, 'Goofy', 'Sanderson', 6, 23),
+( 479, 'Keen', 'Euclid', 13, 30),
+( 480, 'Youthful', 'Mirzakhani', 6, 18),
+( 481, 'Compassionate', 'Saha', 4, 22),
+( 482, 'Kind', 'Diffie', 5, 2),
+( 483, 'Funny', 'Lumiere', 19, 50),
+( 484, 'Wonderful', 'Bose', 10, 48),
+( 485, 'Sharp', 'Wu', 13, 50),
+( 486, 'Heuristic', 'Thompson', 18, 9),
+( 487, 'Tender', 'Feistel', 2, 25),
+( 488, 'Wonderful', 'Hawking', 8, 45),
+( 489, 'Admiring', 'Wright', 10, 29),
+( 490, 'Agitated', 'Dhawan', 14, 40),
+( 491, 'Practical', 'Chatterjee', 8, 49),
+( 492, 'Busy', 'Panini', 3, 24),
+( 493, 'Strange', 'Bardeen', 12, 30),
+( 494, 'Vigilant', 'Mcclintock', 4, 15),
+( 495, 'Hopeful', 'Hodgkin', 4, 49),
+( 496, 'Ecstatic', 'Haibt', 2, 18),
+( 497, 'Crazy', 'Roentgen', 13, 3),
+( 498, 'Vigilant', 'Nash', 10, 23),
+( 499, 'Upbeat', 'Borg', 0, 20),
+( 500, 'Flamboyant', 'Nobel', 4, 49);
