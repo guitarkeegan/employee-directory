@@ -2,7 +2,8 @@ require('dotenv').config()
 const inquirer = require('inquirer');
 const db = require('./lib/queries')
 const cTable = require('console.table');
-// console.log(process.env);
+const deptQ = require('./lib/questions');
+
 
 mainMenuQuestions = [
     {
@@ -61,6 +62,12 @@ async function viewRoles() {
 async function viewEmployees(){
     const [rows] = await db.getEmployees();
     console.table(rows);
+    mainMenu();
+}
+
+departmentQuestions(){
+    inquirer(deptQ)
+    .then(answers=>db.addDepartment(answers.deptName))
     mainMenu();
 }
 
