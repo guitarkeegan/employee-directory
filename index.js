@@ -1,8 +1,8 @@
 require('dotenv').config()
 const inquirer = require('inquirer');
-const mysql = require('mysql2/promise');
+const db = require('./lib/queries')
 const cTable = require('console.table');
-console.log(process.env);
+// console.log(process.env);
 
 mainMenuQuestions = [
     {
@@ -17,7 +17,7 @@ function mainMenu(){
     .then(answers=>{
         switch (answers.view) {
             case "View all departments":
-                
+                viewDept();
                 break;
             case "View all roles":
                 break;
@@ -37,15 +37,20 @@ function mainMenu(){
     })
 }
 
-const db = mysql.createConnection({
-    host: '127.0.0.1',
-    user: process.env.USER_DB,
-    database: process.env.DATABASE,
-    password: process.env.DB_PASSWORD
-  }, 
-  console.log("Connected to employees_db");
-  );
+async function viewDept() {
+    // db.getDepartments()
+    // .then(([rows]) => {
+    //     // console.log(info)
+    //     console.table(rows);
+    //     mainMenu()
+    // })
+    const [rows] = await db.getDepartments();
 
+    console.table(rows)
+    mainMenu()
+}
+
+mainMenu()
 // GIVEN a command-line application that accepts user input
 // WHEN I start the application
 // THEN I am presented with the following options: view all departments, view all roles, view all employees, add a department, add a role, add an employee, and update an employee role
