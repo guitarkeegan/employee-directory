@@ -27,9 +27,10 @@ function mainMenu(){
                 viewEmployees();
                 break;
             case "Add a department":
-                departmentQuestions();
+                getDepartmentQuestion();
                 break;
             case "Add a role":
+                
                 break;
             case "Add an Employee":
                 break;
@@ -65,10 +66,12 @@ async function viewEmployees(){
     mainMenu();
 }
 
-function departmentQuestions(){
+function getDepartmentQuestion(){
     inquirer.prompt(deptQ)
-    .then(answers=>db.addDepartment(answers.deptName))
-    mainMenu();
+    .then(answers=>{
+        db.addDepartment(answers.deptName)
+        mainMenu();
+})
 }
 
 mainMenu()
