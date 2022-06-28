@@ -65,8 +65,8 @@ async function viewEmployees(){
     mainMenu();
 }
 
-departmentQuestions(){
-    inquirer(deptQ)
+function departmentQuestions(){
+    inquirer.prompt(deptQ)
     .then(answers=>db.addDepartment(answers.deptName))
     mainMenu();
 }
