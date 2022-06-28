@@ -20,10 +20,13 @@ function mainMenu(){
                 viewDept();
                 break;
             case "View all roles":
+                viewRoles();
                 break;
             case "View all employees":
+                viewEmployees();
                 break;
             case "Add a department":
+                departmentQuestions();
                 break;
             case "Add a role":
                 break;
@@ -45,9 +48,20 @@ async function viewDept() {
     //     mainMenu()
     // })
     const [rows] = await db.getDepartments();
-
     console.table(rows)
     mainMenu()
+}
+
+async function viewRoles() {
+    const [rows] = await db.getRoles();
+    console.table(rows);
+    mainMenu();
+}
+
+async function viewEmployees(){
+    const [rows] = await db.getEmployees();
+    console.table(rows);
+    mainMenu();
 }
 
 mainMenu()
