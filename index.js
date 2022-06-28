@@ -1,8 +1,8 @@
 require('dotenv').config()
 const inquirer = require('inquirer');
-const mysql = require('mysql2');
+const mysql = require('mysql2/promise');
 const cTable = require('console.table');
-const 
+console.log(process.env);
 
 mainMenuQuestions = [
     {
@@ -37,12 +37,14 @@ function mainMenu(){
     })
 }
 
-const connection = mysql.createConnection({
-    host: 'localhost',
-    user: process.env.USER,
+const db = mysql.createConnection({
+    host: '127.0.0.1',
+    user: process.env.USER_DB,
     database: process.env.DATABASE,
     password: process.env.DB_PASSWORD
-  });
+  }, 
+  console.log("Connected to employees_db");
+  );
 
 // GIVEN a command-line application that accepts user input
 // WHEN I start the application
