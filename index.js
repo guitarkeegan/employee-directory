@@ -2,7 +2,7 @@ require('dotenv').config()
 const inquirer = require('inquirer');
 const db = require('./lib/queries')
 const cTable = require('console.table');
-const {addDepartmentQuestions, addRoleQuestions} = require('./lib/questions');
+const {addDepartmentQuestions, addRoleQuestions, getEmployeeQuestions} = require('./lib/questions');
 let allDepartments = []
 
 mainMenuQuestions = [
@@ -33,6 +33,7 @@ function mainMenu(){
                 getRoleQuestions();
                 break;
             case "Add an Employee":
+                getEmployeeQuestions();
                 break;
             case "Update an employee role":
                 break;
@@ -87,6 +88,9 @@ async function getRoleQuestions(){
         })
 }
 
+async function getEmployeeQuestions(){
+    
+}
 // async function initDepartments(){
 //     const [rows] = await db.getDepartments();
 //     // console.log(rows);
