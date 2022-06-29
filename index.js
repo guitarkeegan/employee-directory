@@ -2,8 +2,8 @@ require('dotenv').config()
 const inquirer = require('inquirer');
 const db = require('./lib/queries')
 const cTable = require('console.table');
-const deptQ = require('./lib/questions');
-
+const {addDepartmentQuestions, addRoleQuestions} = require('./lib/questions');
+let allDepartments = []
 
 mainMenuQuestions = [
     {
@@ -30,7 +30,7 @@ function mainMenu(){
                 getDepartmentQuestion();
                 break;
             case "Add a role":
-                
+                getRoleQuestions();
                 break;
             case "Add an Employee":
                 break;
@@ -67,14 +67,37 @@ async function viewEmployees(){
 }
 
 function getDepartmentQuestion(){
-    inquirer.prompt(deptQ)
+    inquirer.prompt(addDepartmentQuestions)
     .then(answers=>{
-        db.addDepartment(answers.deptName)
+        db.addDepartment(answers.deptName);
         mainMenu();
 })
 }
 
+async function getRoleQuestions(){
+
+    const [rows] = await db.getDepartments();
+    console.table(rows)
+
+    inquirer.prompt(addRoleQuestions)
+    .then(answers=>{
+        const {deptId, roleName, salary} = answers;
+            db.addRole(roleName, salary, deptId);
+            mainMenu();
+        })
+}
+
+// async function initDepartments(){
+//     const [rows] = await db.getDepartments();
+//     // console.log(rows);
+//     rows.map(dept=>allDepartments.push(dept));
+// }
+
+// initDepartments()
+
 mainMenu()
+
+
 // GIVEN a command-line application that accepts user input
 // WHEN I start the application
 // THEN I am presented with the following options: view all departments, view all roles, view all employees, add a department, add a role, add an employee, and update an employee role
