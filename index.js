@@ -2,8 +2,7 @@ require('dotenv').config()
 const inquirer = require('inquirer');
 const db = require('./lib/queries')
 const cTable = require('console.table');
-const {addDepartmentQuestions, addRoleQuestions, getEmployeeQuestions} = require('./lib/questions');
-let allDepartments = []
+const {addDepartmentQuestions, addRoleQuestions, addEmployeeQuestions} = require('./lib/questions');
 
 mainMenuQuestions = [
     {
@@ -89,7 +88,30 @@ async function getRoleQuestions(){
 }
 
 async function getEmployeeQuestions(){
-    
+    // make employees array to check if manager_id exists
+    const [erows] = await db.getEmployees();
+    const empArr = erows.map(item=>item.manager_id);
+    // make roles array to check if roles_id exists
+    const [rrows] = await db.getRoles();
+    const rolesArr = rrows.map(item=>item.manager_id);
+
+    inquirer.prompt(addEmployeeQuestions)
+    .then(answers=>{
+        const {fName, lName, role, isManager, managerId} = answers;
+        if (empArr.indexOf(managerId) !== -1 && rolesArr.indexOf(role) !== -1){
+            let mId;
+            if (isManager){
+                mId = NULL;
+            } else {
+                mId = managerId;
+            }
+            db.addEmployee(fName, lName, role, mId);
+            mainMenu();
+        } else {
+            console.log("Manager ID or Role ID does not exist, please double check the IDs for both.")
+            mainMenu();
+        }
+    })
 }
 // async function initDepartments(){
 //     const [rows] = await db.getDepartments();
