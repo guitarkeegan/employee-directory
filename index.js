@@ -93,19 +93,20 @@ async function getEmployeeQuestions(){
     const empArr = erows.map(item=>item.manager_id);
     // make roles array to check if roles_id exists
     const [rrows] = await db.getRoles();
-    const rolesArr = rrows.map(item=>item.manager_id);
+    const rolesArr = rrows.map(item=>item.id);
 
     inquirer.prompt(addEmployeeQuestions)
     .then(answers=>{
         const {fName, lName, role, isManager, managerId} = answers;
-        if (empArr.indexOf(managerId) !== -1 && rolesArr.indexOf(role) !== -1){
+        if (empArr.includes(parseInt(managerId)) && rolesArr.includes(parseInt(role))){
             let mId;
-            if (isManager){
-                mId = NULL;
+            if (isManager == "true"){
+                mId = null;
             } else {
                 mId = managerId;
             }
             db.addEmployee(fName, lName, role, mId);
+            console.log(`${fName} ${lName} was added to database`);
             mainMenu();
         } else {
             console.log("Manager ID or Role ID does not exist, please double check the IDs for both.")
