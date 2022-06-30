@@ -135,7 +135,7 @@ async function getUpdateEmployeeQuestions(){
             db.updateEmployeeRole(eId, nRole);
             const empIndex = empIdArr.indexOf(eId);
             const rIndex = rolesIdArr.indexOf(nRole);
-            console.log(`${empArr[empIndex].fName} ${empArr[empIndex].lName}'s role has been changed to ${rolesArr[rIndex].id}`);
+            console.log(`${empArr[empIndex].first_name} ${empArr[empIndex].last_name}'s role has been changed to ${rolesArr[rIndex].title}`);
             mainMenu();
         } else {
             console.log("Either the employee number or the role ID is incorrect.");
