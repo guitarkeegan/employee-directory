@@ -117,8 +117,32 @@ async function getEmployeeQuestions(){
 }
 
 async function getUpdateEmployeeQuestions(){
-    const {answers} = await inquirer.prompt(updateEmployeeRoleQuestions);
-    console.log(answers);
+
+    const [rows] = await db.getEmployees();
+    const empIdArr = rows.map(item=>item.id);
+    const empArr = [...rows];
+
+    const [rrows] = await db.getRoles();
+    const rolesIdArr = rrows.map(item=>item.id);
+    const rolesArr = [...rrows];
+
+    inquirer.prompt(updateEmployeeRoleQuestions)
+    .then(answers=>{
+        const {empId, newRole} = answers;
+        const eId = parseInt(empId);
+        const nRole = parseInt(newRole);
+        if (empIdArr.includes(eId) && rolesIdArr.includes(nRole)){
+            db.updateEmployeeRole(eId, nRole);
+            const empIndex = empIdArr.indexOf(eId);
+            const rIndex = rolesIdArr.indexOf(nRole);
+            console.log(`${empArr[empIndex].fName} ${empArr[empIndex].lName}'s role has been changed to ${rolesArr[rIndex].id}`);
+            mainMenu();
+        } else {
+            console.log("Either the employee number or the role ID is incorrect.");
+            mainMenu();
+        }
+    })
+    
 }
 // async function initDepartments(){
 //     const [rows] = await db.getDepartments();
