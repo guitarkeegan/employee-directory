@@ -2,13 +2,13 @@ require('dotenv').config()
 const inquirer = require('inquirer');
 const db = require('./lib/queries')
 const cTable = require('console.table');
-const {addDepartmentQuestions, addRoleQuestions, addEmployeeQuestions, updateEmployeeRoleQuestions} = require('./lib/questions');
+const {addDepartmentQuestions, addEmployeeQuestions, addRoleQuestions, updateEmployeeRoleQuestions} = require('./lib/questions');
 
 mainMenuQuestions = [
     {
         type: "list",
         name: "view",
-        choices: ["View all departments", "View all roles", "View all employees", "Add a department", "Add a role", "Add an Employee", "Update an employee role"]
+        choices: ["View all departments", "View all roles", "View all employees", "Add a department", "Add a role", "Add an employee", "Update an employee role", "Update employee manager"]
     }
 ]
 
@@ -37,6 +37,8 @@ function mainMenu(){
             case "Update an employee role":
                 getUpdateEmployeeQuestions();
                 break;
+            case "Update employee manager":
+                getUpdateEmployeeManagerQuestions();
             default:
                 break;
         }
@@ -81,6 +83,13 @@ async function getRoleQuestions(){
     const [rows] = await db.getDepartments();
     console.table(rows)
     const deptArr = rows.map(item=>item.id);
+
+    // const [drows] = await db.getDepartments();
+    // const roles = drows;
+    // const dChoices = roles.map(({name})=>{
+    //     return name;
+    // });
+    // console.log(dChoices);
 
     inquirer.prompt(addRoleQuestions)
     .then(answers=>{
@@ -158,8 +167,12 @@ async function getUpdateEmployeeQuestions(){
             console.log("Either the employee number or the role ID is incorrect.");
             mainMenu();
         }
-    })
+    })   
+}
+
+async function getUpdateEmployeeManagerQuestions(){
     
+
 }
 // async function initDepartments(){
 //     const [rows] = await db.getDepartments();
