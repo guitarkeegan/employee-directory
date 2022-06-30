@@ -71,6 +71,7 @@ function getDepartmentQuestion(){
     inquirer.prompt(addDepartmentQuestions)
     .then(answers=>{
         db.addDepartment(answers.deptName);
+        console.log(`\n-- new department was added! --\n`);
         mainMenu();
 })
 }
@@ -79,12 +80,20 @@ async function getRoleQuestions(){
 
     const [rows] = await db.getDepartments();
     console.table(rows)
+    const deptArr = rows.map(item=>item.id);
 
     inquirer.prompt(addRoleQuestions)
     .then(answers=>{
         const {deptId, roleName, salary} = answers;
+        if (deptArr.includes(parseInt(deptId))){
             db.addRole(roleName, salary, deptId);
+            console.log(`\n-- Role was successfully added to database! --\n`);
             mainMenu();
+        } else {
+            console.log(`\n-- Error adding to database. Please varify the department ID --\n `)
+            mainMenu();
+        }
+        
         })
 }
 
