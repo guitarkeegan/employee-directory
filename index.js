@@ -85,12 +85,12 @@ async function getRoleQuestions(){
     inquirer.prompt(addRoleQuestions)
     .then(answers=>{
         const {deptId, roleName, salary} = answers;
-        if (deptArr.includes(parseInt(deptId))){
+        if (deptArr.includes(parseInt(deptId) && roleName.length < 60)){
             db.addRole(roleName, salary, deptId);
             console.log(`\n-- Role was successfully added to database! --\n`);
             mainMenu();
         } else {
-            console.log(`\n-- Error adding to database. Please varify the department ID --\n `)
+            console.log(`\n-- Error adding to database. Please varify the department ID and that the role name is less than 60 characters. --\n `)
             mainMenu();
         }
         
@@ -107,21 +107,29 @@ async function getEmployeeQuestions(){
 
     inquirer.prompt(addEmployeeQuestions)
     .then(answers=>{
-        const {fName, lName, role, isManager, managerId} = answers;
-        if (empArr.includes(parseInt(managerId)) && rolesArr.includes(parseInt(role))){
-            let mId;
-            if (isManager == "true"){
-                mId = null;
+        console.log(answers);
+        let {fName, lName, role, isManager} = answers;
+
+        if (isManager !== ""){
+            if (empArr.includes(parseInt(managerId)) && rolesArr.includes(parseInt(role))){
+            
+                db.addEmployee(fName, lName, role, isManager);
+                console.log(`${fName} ${lName} was added to database`);
+                mainMenu();
             } else {
-                mId = managerId;
+                console.log("\n -- Manager ID or Role ID does not exist, please double check the IDs for both. --\n")
+                mainMenu();
             }
-            db.addEmployee(fName, lName, role, mId);
-            console.log(`${fName} ${lName} was added to database`);
-            mainMenu();
         } else {
-            console.log("Manager ID or Role ID does not exist, please double check the IDs for both.")
-            mainMenu();
+            isManager = null;
+            if (rolesArr.includes(parseInt(role))){
+                db.addEmployee(fName, lName, role, isManager);
+                console.log(`\n-- ${fName} ${lName} was added to database --\n`);
+                mainMenu();
+            }
         }
+
+       
     })
 }
 
