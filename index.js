@@ -2,13 +2,13 @@ require('dotenv').config()
 const inquirer = require('inquirer');
 const db = require('./lib/queries')
 const cTable = require('console.table');
-const {addDepartmentQuestions, addEmployeeQuestions, addRoleQuestions, updateEmployeeRoleQuestions} = require('./lib/questions');
+const {addDepartmentQuestions, addEmployeeQuestions, addRoleQuestions, updateEmployeeRoleQuestions, deleteDepartmentQuestions} = require('./lib/questions');
 
 mainMenuQuestions = [
     {
         type: "list",
         name: "view",
-        choices: ["View all departments", "View all roles", "View all employees", "Add a department", "Add a role", "Add an employee", "Update an employee role", "Update employee manager"]
+        choices: ["View all departments", "View all roles", "View all employees", "Add a department", "Add a role", "Add an employee", "Update an employee role", "Update employee manager", "Delete department"]
     }
 ]
 
@@ -31,7 +31,7 @@ function mainMenu(){
             case "Add a role":
                 getRoleQuestions();
                 break;
-            case "Add an Employee":
+            case "Add an employee":
                 getEmployeeQuestions();
                 break;
             case "Update an employee role":
@@ -39,6 +39,8 @@ function mainMenu(){
                 break;
             case "Update employee manager":
                 getUpdateEmployeeManagerQuestions();
+            case "Delete department":
+                getDeleteDeptQuestions();
             default:
                 break;
         }
@@ -83,7 +85,7 @@ async function getRoleQuestions(){
     const [rows] = await db.getDepartments();
     console.table(rows)
     const deptArr = rows.map(item=>item.id);
-
+    console.log(deptArr);
     // const [drows] = await db.getDepartments();
     // const roles = drows;
     // const dChoices = roles.map(({name})=>{
@@ -94,8 +96,8 @@ async function getRoleQuestions(){
     inquirer.prompt(addRoleQuestions)
     .then(answers=>{
         const {deptId, roleName, salary} = answers;
-        if (deptArr.includes(parseInt(deptId) && roleName.length < 60)){
-            db.addRole(roleName, salary, deptId);
+        if (deptArr.includes(parseInt(deptId)) && roleName.length < 60){
+            db.addRole(roleName, parseInt(salary), parseInt(deptId));
             console.log(`\n-- Role was successfully added to database! --\n`);
             mainMenu();
         } else {
@@ -108,8 +110,8 @@ async function getRoleQuestions(){
 
 async function getEmployeeQuestions(){
     // make employees array to check if manager_id exists
-    const [erows] = await db.getEmployees();
-    const empArr = erows.map(item=>item.manager_id);
+    const [erows] = await db.getManagers();
+    const empArr = erows.map(e=>e.manager_id);
     // make roles array to check if roles_id exists
     const [rrows] = await db.getRoles();
     const rolesArr = rrows.map(item=>item.id);
@@ -120,10 +122,10 @@ async function getEmployeeQuestions(){
         let {fName, lName, role, isManager} = answers;
 
         if (isManager !== ""){
-            if (empArr.includes(parseInt(managerId)) && rolesArr.includes(parseInt(role))){
+            if (empArr.includes(parseInt(isManager)) && rolesArr.includes(parseInt(role))){
             
-                db.addEmployee(fName, lName, role, isManager);
-                console.log(`${fName} ${lName} was added to database`);
+                db.addEmployee(fName, lName, parseInt(role), parseInt(isManager));
+                console.log(`\n--${fName} ${lName} was added to database--\n`);
                 mainMenu();
             } else {
                 console.log("\n -- Manager ID or Role ID does not exist, please double check the IDs for both. --\n")
@@ -170,10 +172,22 @@ async function getUpdateEmployeeQuestions(){
     })   
 }
 
-async function getUpdateEmployeeManagerQuestions(){
+async function getDeleteDeptQuestions(){
+    inquirer.prompt(deleteDepartmentQuestions)
+    .then(answers=>{
+        const {dept} = answers;
+        db.deleteDepartment(parseInt(dept));
+        console.log(`\n-- Department was successfully deleted! --\n`);
+        mainMenu();
+    });
+}
+
+// async function getUpdateEmployeeManagerQuestions(){
     
 
-}
+// }
+
+
 // async function initDepartments(){
 //     const [rows] = await db.getDepartments();
 //     // console.log(rows);
