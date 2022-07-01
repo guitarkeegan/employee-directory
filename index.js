@@ -132,7 +132,8 @@ async function getEmployeeQuestions(){
     const empArr = erows.map(e=>e.manager_id);
     // make roles array to check if roles_id exists
     const [rrows] = await db.getRoles();
-    const rolesArr = rrows.map(item=>item.id);
+    const rolesArr = rrows.map(item=>item.role_id);
+    
 
     inquirer.prompt(addEmployeeQuestions)
     .then(answers=>{
@@ -153,10 +154,13 @@ async function getEmployeeQuestions(){
         } else {
             isManager = null;
             if (rolesArr.includes(parseInt(role))){
-                db.addEmployee(fName, lName, role, isManager);
+                db.addEmployee(fName, lName, parseInt(role), isManager);
                 console.clear();
                 console.log(`\n-- ${fName} ${lName} was added to database --\n`);
                 mainMenu();
+            } else {
+                console.error("\n --Role was not found --\n");
+                console.log(rolesArr[0]); // undefined
             }
         }
 
