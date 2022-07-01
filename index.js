@@ -3,13 +3,13 @@ var figlet = require('figlet');
 const inquirer = require('inquirer');
 const db = require('./lib/queries')
 const cTable = require('console.table');
-const {addDepartmentQuestions, addEmployeeQuestions, addRoleQuestions, updateEmployeeRoleQuestions, deleteDepartmentQuestions, updateEmployeeManagerQuestions} = require('./lib/questions');
-const newPage = "\n\n\n\n\n\n\n\n\n\n";
+const {addDepartmentQuestions, addEmployeeQuestions, addRoleQuestions, updateEmployeeRoleQuestions, deleteDepartmentQuestions, updateEmployeeManagerQuestions, deleteEmpQuestions, deleteRoleQuestions} = require('./lib/questions');
+
 mainMenuQuestions = [
     {
         type: "list",
         name: "view",
-        choices: ["View all departments", "View all roles", "View all employees", "Add a department", "Add a role", "Add an employee", "Update an employee role", "Update employee manager", "Delete department"]
+        choices: ["View all departments", "View all roles", "View all employees", "Add a department", "Add a role", "Add an employee", "Update an employee role", "Update employee manager", "Delete department", "Delete role", "Delete employee"]
     }
 ]
 
@@ -44,11 +44,19 @@ function mainMenu(){
             case "Delete department":
                 getDeleteDeptQuestions();
                 break;
+            case "Delete role":
+                getDeleteRoleQuestions();
+                break;
+            case "Delete employee":
+                getDeleteEmpQuestions();
+                break;
+                
             default:
                 console.error("You missed something in the switch statement");
         }
     })
 }
+
 
 async function viewDept() {
     // db.getDepartments()
@@ -63,6 +71,7 @@ async function viewDept() {
     mainMenu()
 }
 
+
 async function viewRoles() {
     console.clear();
     const [rows] = await db.getRoles();
@@ -70,12 +79,14 @@ async function viewRoles() {
     mainMenu();
 }
 
+
 async function viewEmployees(){
     console.clear();
     const [rows] = await db.getEmployees();
     console.table(rows);
     mainMenu();
 }
+
 
 async function getDepartmentQuestion(){
     console.clear();
@@ -91,6 +102,7 @@ async function getDepartmentQuestion(){
         mainMenu();
 })
 }
+
 
 async function getRoleQuestions(){
     console.clear();
@@ -121,6 +133,7 @@ async function getRoleQuestions(){
         
         })
 }
+
 
 async function getEmployeeQuestions(){
     console.clear();
@@ -168,6 +181,7 @@ async function getEmployeeQuestions(){
     })
 }
 
+
 async function getUpdateEmployeeQuestions(){
     console.clear();
     // show info to update employee role
@@ -204,21 +218,6 @@ async function getUpdateEmployeeQuestions(){
     })   
 }
 
-async function getDeleteDeptQuestions(){
-    console.clear();
-
-    const [rows] = await db.getDepartments();
-    console.table(rows);
-
-    inquirer.prompt(deleteDepartmentQuestions)
-    .then(answers=>{
-        const {dept} = answers;
-        db.deleteDepartment(parseInt(dept));
-        console.clear();
-        console.log(`\n-- Department was successfully deleted! --\n`);
-        mainMenu();
-    });
-}
 
 async function getUpdateEmployeeManagerQuestions(){
 
@@ -251,7 +250,55 @@ async function getUpdateEmployeeManagerQuestions(){
             mainMenu();
         }
     });
+}
 
+
+async function getDeleteDeptQuestions(){
+    console.clear();
+
+    const [rows] = await db.getDepartments();
+    console.table(rows);
+
+    inquirer.prompt(deleteDepartmentQuestions)
+    .then(answers=>{
+        const {dept} = answers;
+        db.deleteDepartment(parseInt(dept));
+        console.clear();
+        console.log(`\n-- Department was successfully deleted! --\n`);
+        mainMenu();
+    });
+}
+
+
+async function getDeleteRoleQuestions(){
+    console.clear();
+
+    const [rows] = await db.getRoles();
+    console.table(rows);
+
+    inquirer.prompt(deleteRoleQuestions)
+    .then(answers=>{
+        const {role} = answers;
+        db.deleteRole(parseInt(role));
+        console.clear();
+        console.log(`\n-- Role was successfully deleted! --\n`);
+        mainMenu();
+    });
+}
+async function getDeleteEmpQuestions(){
+    console.clear();
+
+    const [rows] = await db.getEmployees();
+    console.table(rows);
+
+    inquirer.prompt(deleteEmpQuestions)
+    .then(answers=>{
+        const {emp} = answers;
+        db.deleteEmp(parseInt(emp));
+        console.clear();
+        console.log(`\n-- Employee was successfully deleted! --\n`);
+        mainMenu();
+    });
 }
 
 
