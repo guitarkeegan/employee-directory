@@ -3,13 +3,13 @@ var figlet = require('figlet');
 const inquirer = require('inquirer');
 const db = require('./lib/queries')
 const cTable = require('console.table');
-const {addDepartmentQuestions, addEmployeeQuestions, addRoleQuestions, updateEmployeeRoleQuestions, deleteDepartmentQuestions, updateEmployeeManagerQuestions, deleteEmpQuestions, deleteRoleQuestions} = require('./lib/questions');
+const {addDepartmentQuestions, addEmployeeQuestions, addRoleQuestions, updateEmployeeRoleQuestions, deleteDepartmentQuestions, updateEmployeeManagerQuestions, deleteEmpQuestions, deleteRoleQuestions, empByDeptQuestions} = require('./lib/questions');
 
 mainMenuQuestions = [
     {
         type: "list",
         name: "view",
-        choices: ["View all departments", "View all roles", "View all employees", "Add a department", "Add a role", "Add an employee", "Update an employee role", "Update employee manager", "Delete department", "Delete role", "Delete employee"]
+        choices: ["View all departments", "View all roles", "View all employees", "Add a department", "Add a role", "Add an employee", "Update an employee role", "Update employee manager", "Delete department", "Delete role", "Delete employee", "View employees by department"]
     }
 ]
 
@@ -50,6 +50,10 @@ function mainMenu(){
             case "Delete employee":
                 getDeleteEmpQuestions();
                 break;
+            case "View employees by department":
+                getEmpByDeptQuestion();
+                break;
+                
                 
             default:
                 console.error("You missed something in the switch statement");
@@ -59,12 +63,6 @@ function mainMenu(){
 
 
 async function viewDept() {
-    // db.getDepartments()
-    // .then(([rows]) => {
-    //     // console.log(info)
-    //     console.table(rows);
-    //     mainMenu()
-    // })
     console.clear();
     const [rows] = await db.getDepartments();
     console.table(rows)
@@ -109,13 +107,6 @@ async function getRoleQuestions(){
     const [rows] = await db.getDepartments();
     console.table(rows)
     const deptArr = rows.map(item=>item.id);
-    // console.log(deptArr);
-    // const [drows] = await db.getDepartments();
-    // const roles = drows;
-    // const dChoices = roles.map(({name})=>{
-    //     return name;
-    // });
-    // console.log(dChoices);
 
     inquirer.prompt(addRoleQuestions)
     .then(answers=>{
@@ -172,7 +163,7 @@ async function getEmployeeQuestions(){
                 mainMenu();
             } else {
                 console.error("\n --Role was not found --\n");
-                console.log(rolesArr[0]); // undefined
+                console.log(rolesArr[0]);
             }
         }
 
@@ -188,14 +179,6 @@ async function getUpdateEmployeeQuestions(){
     const empIdsArr = mrows.map(emp=>emp.id);
     const rolesIdArr = mrows.map(emp=>emp.role_id);
     console.table(mrows);
-
-    // const [rows] = await db.getEmployees();
-    // const empIdArr = rows.map(item=>item.id);
-    // const empArr = [...rows];
-
-    // const [rrows] = await db.getRoles();
-    // const rolesIdArr = rrows.map(item=>item.id);
-    // const rolesArr = [...rrows];
 
     inquirer.prompt(updateEmployeeRoleQuestions)
     .then(answers=>{
@@ -298,6 +281,26 @@ async function getDeleteEmpQuestions(){
         console.log(`\n-- Employee was successfully deleted! --\n`);
         mainMenu();
     });
+}
+
+
+async function getEmpByDeptQuestion(){
+    const [rows] = await db.getDepartments();
+    console.table(rows);
+    inquirer.prompt(empByDeptQuestions)
+    .then(answer=>{
+        const {dept} = answer;
+        console.clear();
+        db.getEmployeesByDepartment(dept);
+        mainMenu();
+    })
+    .catch(err=>{
+        if (err){
+            console.clear();
+            console.error(err);
+            mainMenu();
+        }
+    })
 }
 
 
