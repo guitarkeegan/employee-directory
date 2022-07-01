@@ -130,7 +130,6 @@ async function getRoleQuestions(){
             console.log(`\n-- Error adding to database. Please varify the department ID and that the role name is less than 60 characters. --\n `)
             mainMenu();
         }
-        
         })
 }
 
