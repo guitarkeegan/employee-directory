@@ -1,9 +1,10 @@
 require('dotenv').config()
+var figlet = require('figlet');
 const inquirer = require('inquirer');
 const db = require('./lib/queries')
 const cTable = require('console.table');
 const {addDepartmentQuestions, addEmployeeQuestions, addRoleQuestions, updateEmployeeRoleQuestions, deleteDepartmentQuestions} = require('./lib/questions');
-
+const newPage = "\n\n\n\n\n\n\n\n\n\n";
 mainMenuQuestions = [
     {
         type: "list",
@@ -54,38 +55,47 @@ async function viewDept() {
     //     console.table(rows);
     //     mainMenu()
     // })
+    console.clear();
     const [rows] = await db.getDepartments();
     console.table(rows)
     mainMenu()
 }
 
 async function viewRoles() {
+    console.clear();
     const [rows] = await db.getRoles();
     console.table(rows);
     mainMenu();
 }
 
 async function viewEmployees(){
+    console.clear();
     const [rows] = await db.getEmployees();
     console.table(rows);
     mainMenu();
 }
 
-function getDepartmentQuestion(){
+async function getDepartmentQuestion(){
+    console.clear();
+    const [rows] = await db.getDepartments();
+    
+    console.table(rows)
+
     inquirer.prompt(addDepartmentQuestions)
     .then(answers=>{
         db.addDepartment(answers.deptName);
+        console.clear();
         console.log(`\n-- new department was added! --\n`);
         mainMenu();
 })
 }
 
 async function getRoleQuestions(){
-
+    console.clear();
     const [rows] = await db.getDepartments();
     console.table(rows)
     const deptArr = rows.map(item=>item.id);
-    console.log(deptArr);
+    // console.log(deptArr);
     // const [drows] = await db.getDepartments();
     // const roles = drows;
     // const dChoices = roles.map(({name})=>{
@@ -98,9 +108,11 @@ async function getRoleQuestions(){
         const {deptId, roleName, salary} = answers;
         if (deptArr.includes(parseInt(deptId)) && roleName.length < 60){
             db.addRole(roleName, parseInt(salary), parseInt(deptId));
+            console.clear();
             console.log(`\n-- Role was successfully added to database! --\n`);
             mainMenu();
         } else {
+            console.clear();
             console.log(`\n-- Error adding to database. Please varify the department ID and that the role name is less than 60 characters. --\n `)
             mainMenu();
         }
@@ -109,6 +121,10 @@ async function getRoleQuestions(){
 }
 
 async function getEmployeeQuestions(){
+    console.clear();
+    //show roles so that user can see ID numbers
+    const [rows] = await db.getRoles();
+    console.table(rows);
     // make employees array to check if manager_id exists
     const [erows] = await db.getManagers();
     const empArr = erows.map(e=>e.manager_id);
@@ -118,16 +134,17 @@ async function getEmployeeQuestions(){
 
     inquirer.prompt(addEmployeeQuestions)
     .then(answers=>{
-        console.log(answers);
         let {fName, lName, role, isManager} = answers;
 
         if (isManager !== ""){
             if (empArr.includes(parseInt(isManager)) && rolesArr.includes(parseInt(role))){
             
                 db.addEmployee(fName, lName, parseInt(role), parseInt(isManager));
+                console.clear();
                 console.log(`\n--${fName} ${lName} was added to database--\n`);
                 mainMenu();
             } else {
+                console.clear();
                 console.log("\n -- Manager ID or Role ID does not exist, please double check the IDs for both. --\n")
                 mainMenu();
             }
@@ -135,6 +152,7 @@ async function getEmployeeQuestions(){
             isManager = null;
             if (rolesArr.includes(parseInt(role))){
                 db.addEmployee(fName, lName, role, isManager);
+                console.clear();
                 console.log(`\n-- ${fName} ${lName} was added to database --\n`);
                 mainMenu();
             }
@@ -145,6 +163,9 @@ async function getEmployeeQuestions(){
 }
 
 async function getUpdateEmployeeQuestions(){
+    console.clear();
+    const [erows] = await db.getEmployees();
+    console.table(erows);
 
     const [rows] = await db.getEmployees();
     const empIdArr = rows.map(item=>item.id);
@@ -163,9 +184,11 @@ async function getUpdateEmployeeQuestions(){
             db.updateEmployeeRole(eId, nRole);
             const empIndex = empIdArr.indexOf(eId);
             const rIndex = rolesIdArr.indexOf(nRole);
+            console.clear();
             console.log(`${empArr[empIndex].first_name} ${empArr[empIndex].last_name}'s role has been changed to ${rolesArr[rIndex].title}`);
             mainMenu();
         } else {
+            console.clear();
             console.log("Either the employee number or the role ID is incorrect.");
             mainMenu();
         }
@@ -173,10 +196,16 @@ async function getUpdateEmployeeQuestions(){
 }
 
 async function getDeleteDeptQuestions(){
+    console.clear();
+
+    const [rows] = await db.getDepartments();
+    console.table(rows);
+
     inquirer.prompt(deleteDepartmentQuestions)
     .then(answers=>{
         const {dept} = answers;
         db.deleteDepartment(parseInt(dept));
+        console.clear();
         console.log(`\n-- Department was successfully deleted! --\n`);
         mainMenu();
     });
@@ -195,8 +224,18 @@ async function getDeleteDeptQuestions(){
 // }
 
 // initDepartments()
+console.log(figlet.textSync('Company\nDirectory\n', {
+    font: 'Standard',
+    horizontalLayout: 'default',
+    verticalLayout: 'default',
+    width: 80,
+    whitespaceBreak: true
+}));
 
 mainMenu()
+
+
+
 
 
 // GIVEN a command-line application that accepts user input
