@@ -3,7 +3,7 @@ var figlet = require('figlet');
 const inquirer = require('inquirer');
 const db = require('./lib/queries')
 const cTable = require('console.table');
-const {addDepartmentQuestions, addEmployeeQuestions, addRoleQuestions, updateEmployeeRoleQuestions, deleteDepartmentQuestions} = require('./lib/questions');
+const {addDepartmentQuestions, addEmployeeQuestions, addRoleQuestions, updateEmployeeRoleQuestions, deleteDepartmentQuestions, updateEmployeeManagerQuestions} = require('./lib/questions');
 const newPage = "\n\n\n\n\n\n\n\n\n\n";
 mainMenuQuestions = [
     {
@@ -40,10 +40,12 @@ function mainMenu(){
                 break;
             case "Update employee manager":
                 getUpdateEmployeeManagerQuestions();
+                break;
             case "Delete department":
                 getDeleteDeptQuestions();
-            default:
                 break;
+            default:
+                console.error("You missed something in the switch statement");
         }
     })
 }
@@ -164,32 +166,35 @@ async function getEmployeeQuestions(){
 
 async function getUpdateEmployeeQuestions(){
     console.clear();
-    const [erows] = await db.getEmployees();
-    console.table(erows);
+    // show info to update employee role
+    const [mrows] = await db.getEmployeeRoleInfo();
+    const empIdsArr = mrows.map(emp=>emp.id);
+    const rolesIdArr = mrows.map(emp=>emp.role_id);
+    console.table(mrows);
 
-    const [rows] = await db.getEmployees();
-    const empIdArr = rows.map(item=>item.id);
-    const empArr = [...rows];
+    // const [rows] = await db.getEmployees();
+    // const empIdArr = rows.map(item=>item.id);
+    // const empArr = [...rows];
 
-    const [rrows] = await db.getRoles();
-    const rolesIdArr = rrows.map(item=>item.id);
-    const rolesArr = [...rrows];
+    // const [rrows] = await db.getRoles();
+    // const rolesIdArr = rrows.map(item=>item.id);
+    // const rolesArr = [...rrows];
 
     inquirer.prompt(updateEmployeeRoleQuestions)
     .then(answers=>{
         const {empId, newRole} = answers;
         const eId = parseInt(empId);
         const nRole = parseInt(newRole);
-        if (empIdArr.includes(eId) && rolesIdArr.includes(nRole)){
+        if (empIdsArr.includes(eId) && rolesIdArr.includes(nRole)){
             db.updateEmployeeRole(eId, nRole);
-            const empIndex = empIdArr.indexOf(eId);
+            const empIndex = empIdsArr.indexOf(eId);
             const rIndex = rolesIdArr.indexOf(nRole);
             console.clear();
-            console.log(`${empArr[empIndex].first_name} ${empArr[empIndex].last_name}'s role has been changed to ${rolesArr[rIndex].title}`);
+            console.log(`\n--${mrows[empIndex].employee_name}'s role has been changed to ${mrows[rIndex].role}--\n`);
             mainMenu();
         } else {
             console.clear();
-            console.log("Either the employee number or the role ID is incorrect.");
+            console.log("\n-- Either the employee number or the role ID is incorrect.--\n");
             mainMenu();
         }
     })   
@@ -211,10 +216,39 @@ async function getDeleteDeptQuestions(){
     });
 }
 
-// async function getUpdateEmployeeManagerQuestions(){
-    
+async function getUpdateEmployeeManagerQuestions(){
 
-// }
+    const [rows] = await db.getEmployeeManagerInfo();
+    const idArr = rows.map(emp=>emp.employee_id);
+
+    const manIdArr = rows.map(man=>man.manager_id);
+    console.table(rows);
+
+    inquirer.prompt(updateEmployeeManagerQuestions)
+    .then(answers=>{
+        const {empId, newManager} = answers;
+        const eId = parseInt(empId);
+        const mId = parseInt(newManager);
+        if (idArr.includes(eId)){
+            if (manIdArr.includes(mId)){
+                db.updateEmployeeManager(eId, mId)
+                
+                console.clear();
+                console.log(`--\nChanged Employee's Manager!--\n`);
+                mainMenu();
+            } else {
+                console.clear();
+                console.error("\n-- The ID for the manager was not in the database.--\n");
+                mainMenu();
+            }
+        } else {
+            console.clear();
+            console.error("\n-- The ID you entered did not match any employees. --\n");
+            mainMenu();
+        }
+    });
+
+}
 
 
 // async function initDepartments(){
