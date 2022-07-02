@@ -98,8 +98,7 @@ async function viewEmployees(){
 async function getDepartmentQuestion(){
     console.clear();
     const [rows] = await db.getDepartments();
-    const deptNamesArr = rows.map(dept=>dept.name);
-    
+    const deptNamesArr = rows.map(dept=>dept.departments);
     console.table(rows)
 
     inquirer.prompt(addDepartmentQuestions)
@@ -364,15 +363,24 @@ async function getEmpByDeptQuestion(){
 
 async function getEmpByManagerQuestion(){
     const [rows] = await db.getAllManagers()
+    const manIdArr = rows.map(man=>man.id);
     console.table(rows);
 
     inquirer.prompt(empByManagerQuestion)
     .then(async answer=>{
         const {manager} = answer;
-        console.clear();
-        const [rows] = await db.getEmpsByManager(parseInt(manager));
-        console.table(rows);
-        mainMenu();
+        const managerInt = parseInt(manager);
+        if (manIdArr.includes(managerInt)){
+            console.clear();
+            const [rows] = await db.getEmpsByManager(parseInt(manager));
+            console.table(rows);
+            mainMenu();
+        } else {
+            console.clear();
+            console.log(`\n-- Manager ID was not found --\n`);
+            mainMenu();
+        }
+        
     })
 }
 
