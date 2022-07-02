@@ -12,8 +12,6 @@
  
   A CLI tool for administrators to organize their company departments, roles, and employeesuseing a mysql database.
 
-  The seed info was created with a python script that I created, which can be found [here]()
-
   ## Installation
 
   Clone the project and run with `node index.js`
@@ -41,4 +39,6 @@
   
  ## Demo
 
- 
+ [Video Demo](https://www.loom.com/share/cec2ffe30c7f49819a624d53e9034808)
+
+ ![screenshot](./img/company-directory-screenshot.png)
