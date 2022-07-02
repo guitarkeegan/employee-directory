@@ -1,3 +1,4 @@
+-- seed the database with departments, roles, and employees -- 
 INSERT INTO department (id, name)
 VALUES 
 ( 1, 'Marketing' ),

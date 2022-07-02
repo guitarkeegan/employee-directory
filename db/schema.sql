@@ -30,3 +30,4 @@ CREATE TABLE employee (
     REFERENCES employee(id)
     ON DELETE SET NULL
 );
+-- use delete cascade so that when a role or department is deleted, the employee is not retained --
