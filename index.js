@@ -174,8 +174,9 @@ async function getEmployeeQuestions(){
                 console.log(`\n-- ${fName} ${lName} was added to database --\n`);
                 mainMenu();
             } else {
+                console.clear();
                 console.error("\n --Role was not found --\n");
-                console.log(rolesArr[0]);
+                mainMenu();
             }
         }
 
@@ -298,14 +299,23 @@ async function getDeleteEmpQuestions(){
 
 async function getEmpByDeptQuestion(){
     const [rows] = await db.getDepartments();
+    const deptArr = rows.map(dept=>dept.id);
     console.table(rows);
     inquirer.prompt(empByDeptQuestions)
     .then(async answer=>{
         const {dept} = answer;
-        console.clear();
-        const [rows] = await db.getEmployeesByDepartment(parseInt(dept));
-        console.table(rows);
-        mainMenu();
+        const deptInt = parseInt(dept);
+        if (deptArr.includes(deptInt)){
+            console.clear();
+            const [rows] = await db.getEmployeesByDepartment(deptInt);
+            console.table(rows);
+            mainMenu();
+        } else {
+            console.clear();
+            console.log(`\n-- Department ID was not found --\n`);
+            mainMenu();
+        }
+       
     })
     .catch(err=>{
         if (err){
