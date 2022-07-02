@@ -98,15 +98,23 @@ async function viewEmployees(){
 async function getDepartmentQuestion(){
     console.clear();
     const [rows] = await db.getDepartments();
+    const deptNamesArr = rows.map(dept=>dept.name);
     
     console.table(rows)
 
     inquirer.prompt(addDepartmentQuestions)
     .then(answers=>{
-        db.addDepartment(answers.deptName);
-        console.clear();
-        console.log(`\n-- new department was added! --\n`);
-        mainMenu();
+        const {deptName} = answers;
+        if (!deptNamesArr.includes(deptName)){
+            db.addDepartment(deptName);
+            console.clear();
+            console.log(`\n-- New department was added! --\n`);
+            mainMenu();
+        } else {
+            console.clear();
+            console.log(`\n-- Department name already exists --\n`);
+            mainMenu();
+        }
 })
 }
 
@@ -252,15 +260,24 @@ async function getDeleteDeptQuestions(){
     console.clear();
 
     const [rows] = await db.getDepartments();
+    const deptIdArr = rows.map(rows=>rows.id);
     console.table(rows);
 
     inquirer.prompt(deleteDepartmentQuestions)
     .then(answers=>{
         const {dept} = answers;
-        db.deleteDepartment(parseInt(dept));
-        console.clear();
-        console.log(`\n-- Department was successfully deleted! --\n`);
-        mainMenu();
+        const deptInt = parseInt(dept)
+        if (deptIdArr.includes(deptInt)){
+            db.deleteDepartment(deptInt);
+            console.clear();
+            console.log(`\n-- Department was successfully deleted! --\n`);
+            mainMenu();
+        } else {
+            console.clear();
+            console.log(`\n-- Department ID was not found --\n`);
+            mainMenu();
+        }
+        
     });
 }
 
@@ -269,30 +286,48 @@ async function getDeleteRoleQuestions(){
     console.clear();
 
     const [rows] = await db.getRoles();
+    const rolesArr = rows.map(role=>role.role_id);
     console.table(rows);
 
     inquirer.prompt(deleteRoleQuestions)
     .then(answers=>{
         const {role} = answers;
-        db.deleteRole(parseInt(role));
-        console.clear();
-        console.log(`\n-- Role was successfully deleted! --\n`);
-        mainMenu();
+        const roleInt = parseInt(role);
+        if (rolesArr.includes(roleInt)){
+            db.deleteRole(roleInt);
+            console.clear();
+            console.log(`\n-- Role was successfully deleted! --\n`);
+            mainMenu();
+        } else {
+            console.clear();
+            console.log(`\n-- Role ID was not found --\n`);
+            mainMenu();
+        }
+       
     });
 }
 async function getDeleteEmpQuestions(){
     console.clear();
 
     const [rows] = await db.getEmployees();
+    const empArr = rows.map(emp=>emp.id)
     console.table(rows);
 
     inquirer.prompt(deleteEmpQuestions)
     .then(answers=>{
         const {emp} = answers;
-        db.deleteEmp(parseInt(emp));
-        console.clear();
-        console.log(`\n-- Employee was successfully deleted! --\n`);
-        mainMenu();
+        const empInt = parseInt(emp);
+        if (empArr.includes(empInt)){
+            db.deleteEmp(empInt);
+            console.clear();
+            console.log(`\n-- Employee was successfully deleted! --\n`);
+            mainMenu();
+        } else {
+            console.clear();
+            console.log(`\n-- Employee ID was not found --\n`);
+            mainMenu();
+        }
+       
     });
 }
 
