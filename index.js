@@ -3,13 +3,14 @@ var figlet = require('figlet');
 const inquirer = require('inquirer');
 const db = require('./lib/queries')
 const cTable = require('console.table');
-const {addDepartmentQuestions, addEmployeeQuestions, addRoleQuestions, updateEmployeeRoleQuestions, deleteDepartmentQuestions, updateEmployeeManagerQuestions, deleteEmpQuestions, deleteRoleQuestions, empByDeptQuestions, empByManagerQuestion} = require('./lib/questions');
+const {addDepartmentQuestions, addEmployeeQuestions, addRoleQuestions, updateEmployeeRoleQuestions, deleteDepartmentQuestions, updateEmployeeManagerQuestions, deleteEmpQuestions, deleteRoleQuestions, empByDeptQuestions, empByManagerQuestion, totalUtilizedBudgetQuestion} = require('./lib/questions');
+const { getTotalUtilizedBudget } = require('./lib/queries');
 
 mainMenuQuestions = [
     {
         type: "list",
         name: "view",
-        choices: ["View all departments", "View all roles", "View all employees", "Add a department", "Add a role", "Add an employee", "Update an employee role", "Update employee manager", "Delete department", "Delete role", "Delete employee", "View employees by department", "View employees by manager"]
+        choices: ["View all departments", "View all roles", "View all employees", "Add a department", "Add a role", "Add an employee", "Update an employee role", "Update employee manager", "Delete department", "Delete role", "Delete employee", "View employees by department", "View employees by manager", "View total budget utilization", "Quit"]
     }
 ]
 
@@ -55,6 +56,12 @@ function mainMenu(){
                 break;
             case "View employees by manager":
                 getEmpByManagerQuestion();
+                break;
+            case "View total budget utilization":
+                getTotalUtilizedBudgetQuestion();
+                break;
+            case "Quit":
+                exit();
                 break;
                 
             default:
@@ -129,9 +136,12 @@ async function getRoleQuestions(){
 
 async function getEmployeeQuestions(){
     console.clear();
+    // show managers to get their IDs
+    const [drows] = await db.getEmployeesByDepartment(3);
+        console.table(drows);
     //show roles so that user can see ID numbers
-    const [rows] = await db.getRoles();
-    console.table(rows);
+    const [roleRows] = await db.getRoles();
+    console.table(roleRows);
     // make employees array to check if manager_id exists
     const [erows] = await db.getManagers();
     const empArr = erows.map(e=>e.manager_id);
@@ -306,9 +316,6 @@ async function getEmpByDeptQuestion(){
     })
 }
 
-// async function getManagersQuestion(){
-    
-// }
 
 async function getEmpByManagerQuestion(){
     const [rows] = await db.getAllManagers()
@@ -322,6 +329,36 @@ async function getEmpByManagerQuestion(){
         console.table(rows);
         mainMenu();
     })
+}
+
+
+async function getTotalUtilizedBudgetQuestion(){
+    console.clear();
+    const [rows] = await db.getDepartments();
+    console.table(rows)
+
+    inquirer.prompt(totalUtilizedBudgetQuestion)
+    .then(async answer=>{
+        const {dept} = answer;
+        const [rows] = await db.getTotalUtilizedBudget(parseInt(dept));
+        const salariesArr = rows.map(salary=>parseInt(salary.salary));
+        const initialValue = 0;
+        const sumWithInitial = salariesArr.reduce(
+        (previousValue, currentValue) => previousValue + currentValue,
+        initialValue);
+        let sumWithCommas = sumWithInitial.toLocaleString("en-US");
+        console.log(`\n -- The total budget utilized for this department is $${sumWithCommas} --\n`)
+        mainMenu();
+    })
+    .catch(err=>{
+        if (err){
+            console.error(err);
+        }
+    })
+}
+
+function exit(){
+    process.exit();
 }
 
 
