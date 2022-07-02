@@ -3,13 +3,13 @@ var figlet = require('figlet');
 const inquirer = require('inquirer');
 const db = require('./lib/queries')
 const cTable = require('console.table');
-const {addDepartmentQuestions, addEmployeeQuestions, addRoleQuestions, updateEmployeeRoleQuestions, deleteDepartmentQuestions, updateEmployeeManagerQuestions, deleteEmpQuestions, deleteRoleQuestions, empByDeptQuestions} = require('./lib/questions');
+const {addDepartmentQuestions, addEmployeeQuestions, addRoleQuestions, updateEmployeeRoleQuestions, deleteDepartmentQuestions, updateEmployeeManagerQuestions, deleteEmpQuestions, deleteRoleQuestions, empByDeptQuestions, empByManagerQuestion} = require('./lib/questions');
 
 mainMenuQuestions = [
     {
         type: "list",
         name: "view",
-        choices: ["View all departments", "View all roles", "View all employees", "Add a department", "Add a role", "Add an employee", "Update an employee role", "Update employee manager", "Delete department", "Delete role", "Delete employee", "View employees by department"]
+        choices: ["View all departments", "View all roles", "View all employees", "Add a department", "Add a role", "Add an employee", "Update an employee role", "Update employee manager", "Delete department", "Delete role", "Delete employee", "View employees by department", "View employees by manager"]
     }
 ]
 
@@ -53,7 +53,9 @@ function mainMenu(){
             case "View employees by department":
                 getEmpByDeptQuestion();
                 break;
-                
+            case "View employees by manager":
+                getEmpByManagerQuestion();
+                break;
                 
             default:
                 console.error("You missed something in the switch statement");
@@ -288,10 +290,11 @@ async function getEmpByDeptQuestion(){
     const [rows] = await db.getDepartments();
     console.table(rows);
     inquirer.prompt(empByDeptQuestions)
-    .then(answer=>{
+    .then(async answer=>{
         const {dept} = answer;
         console.clear();
-        db.getEmployeesByDepartment(dept);
+        const [rows] = await db.getEmployeesByDepartment(parseInt(dept));
+        console.table(rows);
         mainMenu();
     })
     .catch(err=>{
@@ -300,6 +303,24 @@ async function getEmpByDeptQuestion(){
             console.error(err);
             mainMenu();
         }
+    })
+}
+
+// async function getManagersQuestion(){
+    
+// }
+
+async function getEmpByManagerQuestion(){
+    const [rows] = await db.getAllManagers()
+    console.table(rows);
+
+    inquirer.prompt(empByManagerQuestion)
+    .then(async answer=>{
+        const {manager} = answer;
+        console.clear();
+        const [rows] = await db.getEmpsByManager(parseInt(manager));
+        console.table(rows);
+        mainMenu();
     })
 }
 
